@@ -26,6 +26,6 @@ services:
       - USER=odoo
       - PASSWORD=odoo17@2023
     volumes:
-      - ./entrypoint.sh:/entrypoint.sh
+      # - ./entrypoint.sh:/entrypoint.sh
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
