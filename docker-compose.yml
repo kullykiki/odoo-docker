@@ -18,7 +18,7 @@ services:
       - db
     ports:
       - "8069:8069"
-      - "8072:8072" 
+      # - "8072:8072" 
     tty: true
     command: --
     environment:
