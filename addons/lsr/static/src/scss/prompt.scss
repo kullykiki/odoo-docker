@@ -10,7 +10,7 @@ $prompt-font-path: '../font/Prompt';
         src: url('#{$prompt-font-path}/Prompt-#{$type}.eot?#iefix') format('embedded-opentype'),
              url('#{$prompt-font-path}/Prompt-#{$type}.woff') format('woff'),
              url('#{$prompt-font-path}/Prompt-#{$type}.ttf') format('truetype'),
-             url('#{$prompt-font-path}/Prompt-#{$type}.svg#Almarai') format('svg');
+             url('#{$prompt-font-path}/Prompt-#{$type}.svg#Prompt') format('svg');
         font-weight: $weight;
         font-style: $style;
     }
@@ -21,7 +21,7 @@ $prompt-font-path: '../font/Prompt';
         src: url('#{$prompt-font-path}/Prompt-#{$type}.eot?#iefix') format('embedded-opentype'),
              url('#{$prompt-font-path}/Prompt-#{$type}.woff') format('woff'),
              url('#{$prompt-font-path}/Prompt-#{$type}.ttf') format('truetype'),
-             url('#{$prompt-font-path}/Prompt-#{$type}.svg#Almarai') format('svg');
+             url('#{$prompt-font-path}/Prompt-#{$type}.svg#Prompt') format('svg');
     }
 }
 
