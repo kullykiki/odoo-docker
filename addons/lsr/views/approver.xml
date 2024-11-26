@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 
+    <record id="lsr_approver_view_qweb" model="ir.ui.view">
+        <field name="name">lsr.approver.view.qweb</field>
+        <field name="model">lsr.booking</field>
+        <field name="type">qweb</field>
+        <field name="arch" type="xml">
+            <div id="wrapwrap">
+                <header>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"></link>
+                    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                    <link rel="stylesheet" href='/lsr/static/src/css/approver.css'/>
+                </header>
+                <nav class="navbar navbar-expand-sm bg-itkmitl navbar-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Logo</a>
+                        <t t-call="portal.user_dropdown">
+                        <li class="">
+                            <a class="btn btn-primary w-100" href="/myaccount">
+                                <span class="ms-1 d-sm-inline">My Account</span>
+                            </a>
+                        </li>
+                    </t>
+                    </div>
+                </nav>
+                <body>
+                    <div class="container-fluid">
+                        <div class="row flex-nowrap">
+                            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-itkmitl">
+                                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white
+    min-vh-100">
+                                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white
+    text-decoration-none">
+                                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                                    </a>
+                                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+    id="menu">
+                                        <li class="nav-item">                     
+                                            <a href="#" class="nav-link align-middle px-0">                         
+                                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>                     
+                                            </a>                 
+                                        </li>                  
+                                    </ul>   
+                                </div>  
+                            </div>
+                        </div>
+                    </div> 
+                </body>
+                <footer />
+            </div>
+        </field>
+    </record> -->
+
+    <template id="lsr.approver_calendar">
+        <head>
+            <link rel="stylesheet" href='/lsr/static/src/css/test.css' />
+            <link rel="stylesheet" href='/lsr/static/src/css/approver.css' />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                rel="stylesheet" />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+                rel="stylesheet" />
+            <title>Approver</title>
+            <!-- datatables -->
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+            <link rel="stylesheet"
+                href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" />
+            <link rel="stylesheet"
+                href="https://cdn.datatables.net/select/2.1.0/css/select.bootstrap5.css" />
+        </head>
+        <t t-name="website.approver_calendar">
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'calendar'" />
+                <div class="approve-main-page p-header">
+                    <div class="approve-content">
+                        <section>
+                            <div id="calendar"></div>
+                        </section>
+                        <section class="s_numbers pt32 pb32" data-snippet="s_numbers"
+                            data-name="Numbers">
+                            <div class="oe_structure oe_empty">
+                                <!-- Modal More Link -->
+                                <div class="modal fade" id="staticBackdrop"
+                                    data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header" >
+                                                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table id="example" class="table table-striped"
+                                                    style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">No.</th>
+                                                            <th class="text-center">Name</th>
+                                                            <th class="text-center">Date</th>
+                                                            <th class="text-center">Time</th>
+                                                            <th class="text-center">Detail</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="exampleBody">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">View
+                                                    Detail</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal Event -->
+                                <div class="modal fade" id="modalEvent" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1"
+                                    aria-labelledby="modalEvent" aria-hidden="true">
+                                    <div class="modal-dialog p-2">
+                                        <div class="modal-content">
+                                            <div class="modal-header row pb-0 m-0">
+                                                <div class="col">
+                                                    <h5 class="modal-title " >รายการจอง #<span id="eventorder"></span></h5>
+                                                    <p class="modal-title-desc prompt-regular" >โดย 65005001 สมมาตร กึ่งกลางพอดี<span id="eventbooker"></span></p>
+                                                </div>
+                                                <div class="col position-relative">
+                                                    <button type="button" class="btn-close btn-modal-close"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                            </div>
+                                            <div class="modal-body mx-3 mt-0">
+                                                <div id="room-data" class="room-data mb-2 mx-1">
+                                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                    <span id="eventroom" />
+                                                </div>
+                                                <div id="date-data" class="date-data my-2">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                </div>
+                                                <div id="detail-data" class="detail-data"></div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-secondary text-uppercase" >Reject</button>
+                                                <button type="button" class="btn btn-approve text-uppercase ">Approve</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </t>
+        </t>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- fullcalendar JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.14/index.global.min.js"></script>
+
+        <!-- Datatables JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+        <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+
+        <!-- Custom JavaScript -->
+        <script src='/lsr/static/src/js/gobalparam.js'></script>
+        <script src='/lsr/static/src/js/approver.js'></script>
+    </template>
+
+</odoo>

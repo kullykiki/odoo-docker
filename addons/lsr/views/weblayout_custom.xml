@@ -1,0 +1,252 @@
+<odoo>
+    <data noupdate="0">
+        
+        <template id="custom_menubar" inherit_id="website.layout" name="custom_menubar">
+            <xpath expr="//header" position="replace">
+                <t t-call="website.navbar">
+                    <t t-set="_navbar_classes" t-valuef="d-none d-lg-block shadow-sm menu-top-z"/>
+
+                    <div id="o_main_nav" class="o_main_nav container nav-custom">
+                        <!-- Brand -->
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0 justify-content-start">
+                            <li>
+                                <a href="/" title="Go to Home" class="me-2 ">
+                                    <!-- <img src="/website/static/src/img/logo.png" alt="Website Logo" class="img-fluid" /> -->
+                                    <img src="/lsr/static/src/img/icon.png" class="img img-btn" width="40" height="40" alt="Home" loading="lazy" contenteditable="true"/>
+                                </a>
+                            </li>
+                            <li>
+                                <h4 class="mb-0 text-white" style="text-align: left;" id="text-header"></h4>
+                            </li>
+                        </ul>
+                        <!-- Extra elements -->
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0 justify-content-end ps-3">
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_link_class" t-valuef="btn btn-primary w-100"/>
+                            </t>
+                            <!-- User Dropdown -->
+                            <div groups="base.group_user">
+                                <li class="">
+                                    <a class="text-white w-100" href="#">
+                                        <i class="fs-4 bi-person-fill" style="vertical-align: bottom !important;"></i><span class="ms-3 d-sm-inline"><t t-esc="user_id.name[:23]" /></span>
+                                    </a>
+                                </li>
+                            </div>
+                        </ul>
+                        
+                    </div>
+                </t>
+                    <div id="side_menu" class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark d-none d-lg-block" style="width: 15% !important;position: fixed !important;">
+                        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                            <a href="/" title="Go to Home" class="me-2 ">
+                                <img src="/lsr/static/src/img/icon.png" class="img img-btn" width="40" height="40" alt="Home" loading="lazy" contenteditable="true"/>
+                            </a>
+                            <ul class="nav nav-pills flex-column align-items-center align-items-sm-start w-100" id="menu" style="padding-top: 20px !important;border-bottom: 1px solid #eb5e28 !important; padding-bottom: 20px !important;">
+                                <t t-foreach="website.menu_id.child_id.sorted(key=lambda x: x.sequence)" t-as="submenu">
+                                    <t t-if="submenu.name in ['Dashboard','Room Type','Reservation']">
+                                        <li class="nav-item w-100">
+                                            <a t-att-href="submenu.url" class="nav-link align-middle lsr menu-link" style="padding: 0.375rem 0.75rem !important;">
+                                                <t t-if="submenu.name == 'Dashboard'" ><i class="fs-4 bi-house" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline w-nowrap"><t t-esc="submenu.name"/></span></t>   
+                                                <t t-if="submenu.name == 'Room Type'" ><i class="fs-4 bi-file-text" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline w-nowrap"><t t-esc="submenu.name"/></span></t>
+                                                <t t-if="submenu.name == 'Reservation'" ><i class="fs-4 bi-calendar" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline w-nowrap"><t t-esc="submenu.name"/></span></t> 
+                                            </a>
+                                        </li>
+                                    </t>
+                                </t>
+                            </ul>
+                            <ul groups="lsr.group_booking_approve" class="nav nav-pills flex-column align-items-center align-items-sm-start w-100" id="menuadmin" style="padding-top: 20px !important;">
+                                <t t-foreach="website.menu_id.child_id.sorted(key=lambda x: x.sequence)" t-as="submenu">
+                                    <t t-if="submenu.name in ['Pending Request']">
+                                        <li class="nav-item w-100">
+                                            <a t-att-href="submenu.url" class="nav-link align-middle lsr menu-link" style="padding: 0.375rem 0.75rem !important;">
+                                                <t t-if="submenu.name == 'Pending Request'" ><i class="fs-4 bi-bookmark-check" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline w-nowrap"><t t-esc="submenu.name"/></span></t></a>
+                                        </li>
+                                    </t>
+                                </t>
+                            </ul>
+                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100">
+                            </ul>
+                            <div groups="base.group_user">
+                                <div class="pb-4 ">
+                                    <ul class="flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" style="list-style-type: none !important;padding-left: 0px !important;">
+                                        <li class="my-2"><a class="text-white" href="#"><i class="fs-4 bi-question-circle"></i><span class="ms-3 d-sm-inline">Help</span></a></li>
+                                        <li class="my-2"><a class="oc4" href="/web/session/logout?redirect=/"><i class="fs-4 bi-box-arrow-right"></i><span class="ms-3 d-sm-inline">Logout Account</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <t t-call="lsr.custom_template_header_mobile"/>
+
+                <!-- JS script -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                <!-- JS Custom -->
+                <script type="text/javascript" src="/lsr/static/src/js/layout.js"></script>
+                <script type="text/javascript" src='/lsr/static/src/js/gobalparam.js'></script>
+            </xpath>
+
+
+        </template>
+        <template id="custom_template_header_mobile" inherit_id="website.template_header_mobile" name="nav_bar" >
+            <xpath expr="//div[@id='o_main_nav']" position="replace">
+                <ul class="o_header_mobile_buttons_wrap navbar-nav flex-row align-items-center gap-2 mb-0">
+                    <li>
+                        <a href="/" title="Go to Home" class="ms-2 ">
+                            <img src="/lsr/static/src/img/icon.png" class="img img-btn" width="40" height="40" alt="My Website" loading="lazy" contenteditable="true"/>
+                        </a>
+                        <!-- <img src="lsr/static/src/img/android-chrome-512x512.png" class="img" width="40" height="40" alt="My Website" loading="lazy" contenteditable="true"/> -->
+                    </li>
+                    <li class="o_not_editable ms-auto">
+                        <button class="nav-link btn me-auto p-2 o_not_editable" type="button" data-bs-toggle="offcanvas" data-bs-target="#top_menu_collapse_mobile" aria-controls="top_menu_collapse_mobile" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
+                        </button>
+                    </li>
+                </ul>
+                <div t-attf-class="offcanvas #{_side if _side else 'offcanvas-end'} o_navbar_mobile" id="top_menu_collapse_mobile">
+                    <div class="offcanvas-header o_not_editable">
+                        <h5 class="mb-0 text-white" id="text-header-mobile"></h5>
+                        <button type="button" class="nav-link btn-close" data-bs-dismiss="offcanvas" aria-label="Close"/>
+                    </div>
+                    <div class="offcanvas-body d-flex flex-column justify-content-between h-100 w-100">
+                        <ul class="navbar-nav">
+                            <!-- Navbar -->
+                            <t t-call="website.navbar_nav">
+                                <t t-set="_no_autohide_menu_mobile" t-valuef="True"/>
+                                <t t-set="is_mobile" t-value="True"/>
+                                <ul class="nav nav-pills flex-column align-items-sm-start" id="menu">
+                                    <t t-foreach="website.menu_id.child_id.sorted(key=lambda x: x.sequence)" t-as="submenu">
+                                        <t t-if="submenu.name in ['Dashboard','Room Type','Reservation']">
+                                            <li class="nav-item w-100">
+                                                <a t-att-href="submenu.url" class="nav-link align-middle lsr menu-link" style="padding: 0.375rem 0.75rem !important;">
+                                                    <t t-if="submenu.name == 'Dashboard'" ><i class="fs-4 bi-house" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline"><t t-esc="submenu.name"/></span></t>   
+                                                    <t t-if="submenu.name == 'Room Type'" ><i class="fs-4 bi-calendar" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline"><t t-esc="submenu.name"/></span></t>
+                                                    <t t-if="submenu.name == 'Reservation'" ><i class="fs-4 bi-file-text" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline"><t t-esc="submenu.name"/></span></t> 
+                                                </a>
+                                            </li>
+                                        </t>
+                                    </t>
+                                </ul>
+                                <hr/>
+                                <ul groups="lsr.group_booking_approve" class="nav nav-pills flex-column align-items-center align-items-sm-start w-100" id="menuadmin">
+                                    <t t-foreach="website.menu_id.child_id.sorted(key=lambda x: x.sequence)" t-as="submenu">
+                                        <t t-if="submenu.name in ['Pending Request']">
+                                            <li class="nav-item w-100">
+                                                <a t-att-href="submenu.url" class="nav-link align-middle lsr menu-link" style="padding: 0.375rem 0.75rem !important;">
+                                                    <t t-if="submenu.name == 'Pending Request'" ><i class="fs-4 bi-bookmark-check" t-att-data-name="submenu.url"></i><span class="ms-3 d-sm-inline w-nowrap"><t t-esc="submenu.name"/></span></t></a>
+                                            </li>
+                                        </t>
+                                    </t>
+                                </ul>
+
+                            </t>
+                        </ul>
+                        <ul class="navbar-nav gap-2 mt-3 w-100">
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_link_class" t-valuef="btn btn-primary w-100"/>
+                            </t>
+                            <!-- User Dropdown -->
+                            
+                            <div groups="base.group_user">
+                                <div class="pb-4 is_connect">
+                                    <ul class="flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" style="list-style-type: none !important;padding-left: 0px !important;">
+                                        <li class="my-2"><a class="text-white" href="#"><i class="fs-4 bi-question-circle"></i><span class="ms-3 d-sm-inline">Help</span></a></li>
+                                        <li class="my-2"><a class="oc4" href="/web/session/logout?redirect=/"><i class="fs-4 bi-box-arrow-right"></i><span class="ms-3 d-sm-inline">Logout Account</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div groups="base.group_user">
+                                <li class="is_connect">
+                                    <a class="text-white w-100" href="#" style="padding: 0.375rem 0.75rem !important;">
+                                        <i class="fs-4 bi-person-fill" style="vertical-align: bottom !important;"></i><span class="ms-3 d-sm-inline"><t t-esc="user_id.name[:23]" /></span>
+                                    </a>
+                                </li>
+                            </div>
+                            <!-- Call To Action -->
+                            <!-- <t t-call="website.header_call_to_action_large"/> -->
+                        </ul>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+        <template id="footer_main" name="footer_main" inherit_id="website.layout">
+            <xpath expr="//div[@id='footer']" position="replace">
+            </xpath>
+            
+            <xpath expr="//div[hasclass('o_footer_copyright')]" position="replace">
+            </xpath>
+	    </template>	
+
+        <template id="cus_login_layout" inherit_id="web.login_layout" name="Website Login Layout" priority="20">
+            <xpath expr="t" position="replace">
+                <t t-call="website.layout">
+                    <div class="p-header">
+                        <div class="oe_website_login_container" t-out="0"/>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
+        
+
+        <!-- <template id="homepage" inherit_id="website.homepage" name="Custom Homepage" >
+            <xpath expr="//div[@id='wrap']" position="replace">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="s_carousel_intro_wrapper p-0" data-snippet="s_carousel_intro" data-name="Carousel Intro">
+                            <div class="s_carousel_intro s_carousel_default carousel slide o_colored_level carousel-dark" data-bs-interval="10000" id="myCarousel1729843347860" data-bs-ride="true">
+                                <div class="carousel-inner">
+                                    <div class="s_carousel_intro_item carousel-item px-0 o_colored_level p-header active" data-name="Slide" style="">
+                                        <div class="container">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                    </div>
+            </xpath>
+        </template> -->
+
+        <template id="portal" name="portal" >
+            <head>
+                <link rel="stylesheet" href='/lsr/static/src/css/layout.css'/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+            </head>
+            <t t-name="website.lsr">
+                <nav data-name="Navbar" aria-label="Main" class="navbar navbar-expand-lg navbar-light o_colored_level o_cc d-none d-lg-block shadow-sm menu-top-z ">
+                    <div id="o_main_nav" class="o_main_nav container nav-custom">
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0 justify-content-start" data-oe-model="ir.ui.view" data-oe-id="1395" data-oe-field="arch" data-oe-xpath="/data/xpath/t[1]/div[1]/ul[1]">
+                            <li>
+                                <a href="/" title="Go to Home" class="me-2 ">
+                                    <img src="/lsr/static/src/img/icon.png" class="img img-btn" width="40" height="40" alt="Home" loading="lazy" contenteditable="true" style=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <h4 class="mb-0 text-white" style="text-align: left;" id="text-header">portal</h4>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0 justify-content-end ps-3">
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_link_class" t-valuef="btn btn-primary w-100"/>
+                            </t>
+                            <!-- User Dropdown -->
+                            <div groups="base.group_user">
+                                <li class="">
+                                    <a class="text-white w-100" href="#">
+                                        <i class="fs-4 bi-person-fill" style="vertical-align: bottom !important;"></i><span class="ms-3 d-sm-inline"><t t-esc="user_id.name[:23]" /></span>
+                                    </a>
+                                </li>
+                            </div>
+                        </ul>
+                        
+                    </div>
+                
+                </nav>
+                
+            </t>
+        </template>
+    </data>
+</odoo>

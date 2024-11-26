@@ -1,0 +1,117 @@
+main {
+  margin-left: 15% !important;
+  position: absolute !important;
+  width: 85vw !important;
+}
+.container-custom {
+  padding-right: 6vw !important;
+  padding-left: 6vw !important;
+}
+.nav-custom {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  max-width: 100% !important;
+  padding-left: 8px !important;
+}
+body {
+  background-color: white !important;
+}
+.navbar-light {
+  background-color: #1d3557 !important;
+  color: white !important;
+}
+.nav-link {
+  color: white !important;
+}
+.nav-link:hover {
+  color: white !important;
+}
+.active.nav-link {
+  color: #eb5e28 !important;
+}
+.navbar {
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+a {
+  text-decoration: none !important;
+}
+
+.img-btn {
+  cursor: pointer !important;
+  filter: drop-shadow(2px 2px 2px black) !important;
+}
+.custom_footer {
+  background-color: #1d3557 !important;
+}
+
+.btn-primary {
+  color: #ffffff !important;
+  background-color: #457b9d !important;
+  border-color: #457b9d !important;
+}
+.btn-second {
+  color: #ffffff !important;
+  background-color: #457b9d !important;
+  border-color: #457b9d !important;
+}
+.btn-search {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+.btn:hover,
+.active.btn {
+  color: #ffffff !important;
+  filter: opacity(85%) !important;
+}
+.o_navbar_mobile {
+  background-color: #1d3557 !important;
+}
+.navbar-toggler-icon,
+.nav-link.btn-close {
+  filter: grayscale(1) invert(1) !important;
+}
+.navbar-nav > li > .dropdown-toggle::after {
+  float: none !important;
+  transform: translateY(50%) !important;
+}
+.btn-outline-light:hover {
+  color: #1d3557 !important;
+}
+.navbar-light .dropdown-menu .dropdown-item.active {
+  background-color: transparent !important;
+  color: #eb5e28 !important;
+}
+.navbar-light a {
+  color: white !important;
+}
+.menu-top-z {
+  z-index: 2 !important;
+}
+.nav-pills .nav-link.active {
+  background-color: #eb5e28 !important;
+  color: white !important;
+}
+.t-menu,
+.nav-link {
+  margin: 2px !important;
+}
+a:hover {
+  color: #457b9d !important;
+}
+a.oc4 {
+  color: #eb5e28 !important;
+}
+hr {
+  border-top: 1px solid #eb5e28 !important;
+}
+
+.hr-divide {
+  margin-top: 3vw !important;
+  border-top: 1px solid #457b9d !important;
+}
+.w-nowrap {
+  white-space: nowrap;
+}

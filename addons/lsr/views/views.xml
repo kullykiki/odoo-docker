@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="lsr.list">
+      <field name="name">lsr list</field>
+      <field name="model">lsr.lsr</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+    
+
+<!-- 
+    <record id="lsr.lsr_room_calendar" model="ir.ui.view">
+      <field name="name">lsr.room.view.calendar</field>
+      <field name="model">lsr.room</field>
+      <field name="arch" type="xml">
+        <calendar date_start="create_date" string="Learning"
+          mode="month" date_stop="create_date">
+          <field name="create_uid" />
+        </calendar>
+      </field>
+    </record> -->
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="lsr.lsr_booking_action_window">
+      <field name="name">Booking</field>
+      <field name="res_model">lsr.booking</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+
+
+    
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="lsr.action_server">
+      <field name="name">lsr server</field>
+      <field name="model_id" ref="model_lsr_lsr"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <menuitem name="Learning Space Reservation" id="lsr.menu_root" 
+      action="lsr.lsr_booking_action_window" web_icon="lsr,static/src/img/icon.png" />
+    <menuitem name="Room" id="lsr.room_menu" parent="lsr.menu_root"
+      action="lsr.lsr_room_action_window" />
+    <menuitem name="Master" id="lsr.master_menu" parent="lsr.menu_root" />
+    <menuitem name="Room Type" id="lsr.m_room_type_menu" parent="lsr.master_menu"
+      action="lsr.lsr_m_room_type_action_window" />
+    <!--
+    <menuitem name="lsr" id="lsr.menu_root"/>
+-->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="lsr.menu_1" parent="lsr.menu_root"/>
+    <menuitem name="Menu 2" id="lsr.menu_2" parent="lsr.menu_root"/>
+-->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="lsr.menu_1_list" parent="lsr.menu_1"
+              action="lsr.action_window"/>
+    <menuitem name="Server to list" id="lsr" parent="lsr.menu_2"
+              action="lsr.action_server"/>
+-->
+  </data>
+</odoo>

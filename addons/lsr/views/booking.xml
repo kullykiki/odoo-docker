@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_approve" model="ir.actions.server">
+            <field name="name">Approve</field>
+            <field name="model_id" ref="lsr.model_lsr_booking" />
+            <field name="binding_model_id" ref="lsr.model_lsr_booking" />
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_approve()
+            </field>
+        </record>
+        <record id="action_reject" model="ir.actions.server">
+            <field name="name">Reject</field>
+            <field name="model_id" ref="lsr.model_lsr_booking" />
+            <field name="binding_model_id" ref="lsr.model_lsr_booking" />
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_reject()
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lsr.booking_list">
+            <field name="name">learning space reservation booking list</field>
+            <field name="model">lsr.booking</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="status=='pending'" decoration-muted="status=='approved'">
+                    <field name="title" string="วัตถุประสงค์การจอง" />
+                    <field name="booker" widget="many2one_avatar_user" string="ผู้ขอจองห้อง" />
+                    <field name="room" string="ห้อง" />
+                    <field name="start_date" string="เวลาเริ่มจอง" />
+                    <field name="end_date" string="เวลาสิ้นสุดการจอง" />
+                    <field name="status" widget="badge" decoration-info="status == 'pending'"
+                        decoration-success="status == 'approved'" string="ผลการอนุมัติ" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- <record id="lsr.booking_approve_view_form" model="ir.ui.view">
+            <field name="name">lsr.booking.approve.view.form</field>
+            <field name="model">lsr.booking</field>
+            <field name="arch" type="xml">
+                <form string="approve">
+                    <sheet>
+                        <h1><field name="title"></field></h1>
+                        <group>
+                            
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> -->
+
+        <record id="lsr.lsr_booking_form" model="ir.ui.view">
+            <field name="name">lsr.booking.view.form</field>
+            <field name="model">lsr.booking</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_approve" class="oe_highlight " type="object"
+                            invisible="result and status == 'done'"
+                            groups="lsr.group_booking_approve">Approve</button>
+                        <button name="action_reject" class="btn btn-secondary" type="object"
+                            invisible="result and status == 'done'"
+                            groups="lsr.group_booking_approve">Reject</button>
+                        <field name="status" widget="statusbar"  options="{'clickable': '1'}" />
+                    </header>
+                    <sheet>
+                        <div class="d-md-flex justify-content-between">
+                            <h2>Booking</h2>
+
+                        </div>
+                        <hr />
+                        <group>
+                            <field name="name" invisible="status == 'pending'" />
+                            <field name="title" context="{'default_title': 'title'}" />
+                            <field name="purpose" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="booker" widget="many2one_avatar_user" />
+                                <field name="start_date" />
+                                <field name="check_in"  invisible="1" />
+                            </group>
+                            <group>
+                                <field name="room" />
+                                <field name="end_date" />
+                                <field name="check_out" invisible="1" />
+                            </group>
+                        </group>
+                        <notebook invisible="result == False">
+                            <page name="approve" string="Approve">
+                                <group>
+                                    <group>
+                                        <field name="result" readonly="1" />
+                                    </group>
+                                    <group></group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="approver" readonly="1" />
+                                    </group>
+                                    <group>
+                                        <field name="approved_time" readonly="1" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"
+                            options="{'post_refresh': 'recipients'}" />
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- 
+        <record id="approver_lsr_form" model="ir.ui.view">
+            <field name="name">lsr.approver.form.inherit</field>
+            <field name="model">lsr.booking</field>
+            <field name="inherit_id" ref="lsr.lsr_booking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='result']" position="attributes">
+                    <t groups="lsr.group_booking_approve">
+                        <attribute name="readonly">False</attribute>
+                    </t>
+                </xpath>
+            </field>
+        </record> -->
+
+        <record id="lsr.lsr_booking_calendar" model="ir.ui.view">
+            <field name="name">lsr.booking.view.calendar</field>
+            <field name="model">lsr.booking</field>
+            <field name="arch" type="xml">
+                <calendar date_start="start_date" string="Learning" mode="month"
+                    date_stop="end_date" event_open_popup="false" color="booker">
+                    <field name="booker" avatar_field="avatar_128" />
+                    <field name="start_date" />
+                    <field name="room" avatar_field="profile" />
+                </calendar>
+            </field>
+        </record>
+
+
+
+
+    </data>
+</odoo>

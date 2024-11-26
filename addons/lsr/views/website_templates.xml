@@ -1,0 +1,637 @@
+<odoo>
+    <data>
+        <!-- lsr template-->
+        <template id="lsr_home">
+            <head>
+                <link rel="stylesheet" href='/lsr/static/src/css/test.css'/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+            </head>
+            <t t-name="website.lsr">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'lsr_home'"/>
+                    <div id="wrap" class="oe_structure oe_empty" position="replace">
+                        <section class="s_carousel_intro_wrapper p-0" data-snippet="s_carousel_intro" data-name="Carousel Intro">
+                            <div class="s_carousel_intro s_carousel_default carousel slide o_colored_level carousel-dark" data-bs-interval="10000" id="myCarousel1729843347860" data-bs-ride="true">
+                                <div class="carousel-inner">
+                                    <div class="s_carousel_intro_item carousel-item px-0 o_colored_level bg-header p-header active" data-name="Slide" style="">
+                                        <div class="container">
+                                            <div class="row o_grid_mode" data-row-count="6">
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-4 col-lg-6" data-name="Block" style="z-index: 1; grid-area: 2 / 1 / 6 / 7;">
+                                                    <h1 class="display-3-fs">Learning Space Reservation</h1>
+                                                </div>
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-2 col-lg-6" data-name="Block" style="z-index: 2; grid-area: 2 / 7 / 4 / 13; --grid-item-padding-y: 0px;">
+                                                    <p class="lead">
+                                                        Discover your perfect home with our expert real estate services that offer a seamless experience from search to closing.
+                                                    </p>
+                                                </div>
+                                                
+                                                <div class="o_grid_item o_grid_item_image g-col-lg-6 o_colored_level g-height-4 col-lg-6" data-name="Block" style="z-index: 3; grid-area: 3 / 7 / 7 / 13;">
+                                                    <!-- <img src="/web_editor/image_shape/website.s_text_image_default_image/web_editor/panel/panel_duo_step.svg" alt="" class="img img-fluid" loading="lazy" data-mimetype="image/jpeg" data-original-id="273" data-original-src="/theme_real_estate/static/src/img/snippets/s_images_wall_01.jpg" data-mimetype-before-conversion="image/jpeg"/> -->
+                                                    <img src="/lsr/static/src/img/roomtype1.jpg" class="img img-fluid" loading="lazy" contenteditable="true"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="s_carousel_intro_controllers container position-absolute start-50 bottom-0 translate-middle-x w-100 mb-md-4 o_not_editable">
+                                    <div class="s_carousel_intro_controllers_row row gap-3 gap-lg-5 justify-content-between flex-nowrap flex-row-reverse">
+                                        
+                                        <div class="o_arrows_wrapper gap-2 w-auto p-0">
+                                            <button class="carousel-control-prev o_not_editable o_we_no_overlay d-none" data-bs-slide="prev" aria-label="Previous" title="Previous" data-bs-target="#myCarousel1729843347860">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"/>
+                                                <span class="visually-hidden o_default_snippet_text">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next o_not_editable o_we_no_overlay d-none" data-bs-slide="next" aria-label="Next" title="Next" data-bs-target="#myCarousel1729843347860">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"/>
+                                                <span class="visually-hidden o_default_snippet_text">Next</span>
+                                            </button>
+                                        </div>
+                            
+                                        <div class="s_carousel_indicators_numbers carousel-indicators align-items-center flex-shrink-1 w-auto o_we_no_overlay d-none">
+                                            <button type="button" data-bs-slide-to="0" aria-label="Carousel indicator" data-bs-target="#myCarousel1729843347860" class="active" aria-current="true"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="s_numbers o_cc o_cc1 pt32 o_colored_level pb0" data-snippet="s_numbers" data-name="Numbers">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4 o_colored_level">
+                                        <h2>Record meeting room statistics</h2>
+                                        <p>
+                                            บันทึกข้อมูลสถิติการขอใช้ห้องประชุม
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-7 offset-lg-1 o_colored_level">
+                                        <div class="row">
+                                            <div class="col-lg-4 pt24 pb24 text-center o_colored_level" data-name="Number Box">
+                                                <p class="lead">
+                                                    <span class="s_number display-1-fs o_default_snippet_text">14K</span><br/>
+                                                    <span class="h5-fs o_default_snippet_text">properties already sold</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4 pt24 pb24 text-center o_colored_level" data-name="Number Box">
+                                                <p class="lead">
+                                                    <span class="s_number display-1-fs o_default_snippet_text">98%</span><br/>
+                                                    <span class="h5-fs o_default_snippet_text">happy customers</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4 pt24 pb24 text-center o_colored_level" data-name="Number Box">
+                                                <p class="lead">
+                                                    <span class="s_number display-1-fs o_default_snippet_text">142</span><br/>
+                                                    <span class="h5-fs o_default_snippet_text">amazing agents</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_faq_horizontal o_colored_level" data-snippet="s_faq_horizontal" data-name="Topics List">
+                            <div class="container">
+                                
+                                <div class="row s_col_no_resize">
+                                    
+                                    <div data-name="Topic" class="s_faq_horizontal_entry col-12 mb-2 pt16 pb32 o_colored_level">
+                                        <article class="row">
+                                            <hgroup class="col-lg-4" role="heading" aria-level="3">
+                                                <div class="s_faq_horizontal_entry_title position-lg-sticky pb-lg-3 transition-base overflow-auto" style="top: 74px; max-height: calc(-114px + 100vh);">
+                                                    <h3 class="h5-fs"><br/></h3>
+                                                    <div data-name="Accordion" class="s_accordion">
+                                                        <div id="myCollapse" class=" accordion">
+                                                            <div class="accordion-item position-relative z-1" data-name="Accordion Item">
+                                                                <button type="button" class="accordion-header accordion-button justify-content-between gap-2 bg-transparent h6-fs fw-bold text-decoration-none text-reset transition-none" data-bs-toggle="collapse" aria-expanded="true" id="accordion-button107160_1" data-bs-target="#myCollapseTab107160_1" aria-controls="myCollapseTab107160_1"><span class="flex-grow-1 o_default_snippet_text">What services does your company offer ?</span></button>
+                                                                <div class="accordion-collapse collapse show" data-bs-parent="#myCollapse" role="region" id="myCollapseTab107160_1" aria-labelledby="accordion-button107160_1">
+                                                                    <div class="accordion-body">
+                                                                        <p class="o_default_snippet_text">Our company specializes in consulting, product development, and customer support. We tailor our services to fit the unique needs of businesses across various sectors, helping them grow and succeed in a competitive market.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="accordion-item position-relative z-1" data-name="Accordion Item">
+                                                                <button type="button" class="accordion-header accordion-button collapsed justify-content-between gap-2 bg-transparent h6-fs fw-bold text-decoration-none text-reset transition-none" data-bs-toggle="collapse" aria-expanded="false" id="accordion-button107160_2" data-bs-target="#myCollapseTab107160_2" aria-controls="myCollapseTab107160_2"><span class="flex-grow-1 o_default_snippet_text">How can I contact customer support ?</span></button>
+                                                                <div class="accordion-collapse collapse" data-bs-parent="#myCollapse" role="region" id="myCollapseTab107160_2" aria-labelledby="accordion-button107160_2">
+                                                                    <div class="accordion-body">
+                                                                        <p class="o_default_snippet_text">You can reach our customer support team by emailing info@yourcompany.example.com, calling +1 555-555-5556, or using the live chat on our website. Our dedicated team is available 24/7 to assist with any inquiries or issues.</p>
+                                                                        <p class="o_default_snippet_text">We’re committed to providing prompt and effective solutions to ensure your satisfaction.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="accordion-item position-relative z-1" data-name="Accordion Item">
+                                                                <button type="button" class="accordion-header accordion-button collapsed justify-content-between gap-2 bg-transparent h6-fs fw-bold text-decoration-none text-reset transition-none" data-bs-toggle="collapse" aria-expanded="false" id="accordion-button107160_3" data-bs-target="#myCollapseTab107160_3" aria-controls="myCollapseTab107160_3"><span class="flex-grow-1 o_default_snippet_text">What is your return policy ?</span></button>
+                                                                <div class="accordion-collapse collapse" data-bs-parent="#myCollapse" role="region" id="myCollapseTab107160_3" aria-labelledby="accordion-button107160_3">
+                                                                    <div class="accordion-body">
+                                                                        <p class="o_default_snippet_text">We offer a 30-day return policy for all products. Items must be in their original condition, unused, and include the receipt or proof of purchase. Refunds are processed within 5-7 business days of receiving the returned item.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </hgroup>
+                                            <span class="col-lg-7 offset-lg-1 d-block">
+                                                <p><br/></p>
+                                                <div data-snippet="s_chart" data-name="Chart" class="s_chart" data-type="doughnut" data-legend-position="right" data-tooltip-display="true" data-stacked="false" data-border-width="1" data-data="{&quot;labels&quot;:[&quot;v15&quot;,&quot;v16&quot;,&quot;v17&quot;,&quot;v18&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Improvements&quot;,&quot;data&quot;:[&quot;12&quot;,&quot;24&quot;,&quot;48&quot;,&quot;200&quot;],&quot;backgroundColor&quot;:[&quot;#B676A6&quot;,&quot;#7A8471&quot;,&quot;#6ECBCF&quot;,&quot;#FAF6B8&quot;],&quot;borderColor&quot;:[&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;]},{&quot;label&quot;:&quot;&quot;,&quot;data&quot;:[0,0,0,0],&quot;backgroundColor&quot;:[&quot;#9BCA9F&quot;,&quot;#C4E11A&quot;,&quot;#212AB4&quot;,&quot;#6D025B&quot;],&quot;borderColor&quot;:[&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;]}]}" data-max-value="250" data-ticks-min="NaN" data-ticks-max="250">
+                                                    <canvas height="370" style="box-sizing: border-box; display: block; height: 370px; width: 740px;" width="740"/>
+                                                </div>
+                                                <p><br/><br/></p>
+                                            </span>
+                                        </article>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <!-- Room Type -->
+        <template id="roomtype">
+            <head>
+                <link rel="stylesheet" href='/lsr/static/src/css/test.css'/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+            </head>
+            <t t-name="website.lsr">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'roomtype'"/>
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="s_carousel_intro_wrapper p-0" data-snippet="s_carousel_intro" data-name="Carousel Intro">
+                            <div class="s_carousel_intro s_carousel_default carousel slide o_colored_level carousel-dark" data-bs-interval="10000" id="myCarousel1729843347860" data-bs-ride="true">
+                                <div class="carousel-inner">
+                                    <div class="s_carousel_intro_item carousel-item px-0 o_colored_level bg-header p-header active" data-name="Slide" style="">
+                                        <div class="container">
+                                            <div class="row o_grid_mode" data-row-count="6">
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-4 col-lg-6" data-name="Block" style="z-index: 1; grid-area: 2 / 1 / 6 / 7;">
+                                                    <h1 class="display-3-fs">Room Type</h1>
+                                                </div>
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-2 col-lg-6" data-name="Block" style="z-index: 2; grid-area: 2 / 7 / 4 / 13; --grid-item-padding-y: 0px;">
+                                                    <p class="lead">
+                                                        Discover your perfect home with our expert real estate services that offer a seamless experience from search to closing.
+                                                    </p>
+                                                </div>
+                                                
+                                                <div class="o_grid_item o_grid_item_image g-col-lg-6 o_colored_level g-height-4 col-lg-6" data-name="Block" style="z-index: 3; grid-area: 3 / 7 / 7 / 13;">
+                                                    <img src="/lsr/static/src/img/roomtype1.jpg" class="img img-fluid" loading="lazy" contenteditable="true"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_numbers pt32 pb32" data-snippet="s_numbers" data-name="Numbers">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="ms-2" >ประเภทห้อง :</label> 
+                                        <br/>
+                                        <div class="btn-group btn-search w-100">
+                                            <button id="btntype" value="0" type="button" class="btn btn-second dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                ทั้งหมด
+                                            </button>
+                                            <ul id="typeroom" class="dropdown-menu w-100">
+                                                <li><a class="dropdown-item" href="#" value="0">ทั้งหมด</a></li>
+                                            </ul>
+                                            <!-- <div class="select-custom">
+                                                <select id="typeroom" class="form-select form-select-lg selector">
+                                                    <option value="">ทั้งหมด</option>
+                                                </select>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="ms-2">ชั้น :</label> 
+                                        <br/>
+                                        <div class="btn-group btn-search w-100">
+                                            <button id="btnfloor" value="0" type="button" class="btn btn-second dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                ทั้งหมด
+                                            </button>
+                                            <ul id="floorroom" value="0" class="dropdown-menu w-100">
+                                                <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
+                                            </ul>
+                                            <!-- <div class="select-custom">
+                                                <select id="floorroom" class="form-select form-select-lg selector">
+                                                    <option value="">ทั้งหมด</option>
+                                                </select>
+                                            </div> -->
+                                            
+                                        </div>     
+                                    </div>                                    
+                                    <!-- <div class="btn-group btn-search col-lg-6">
+                                        <button type="button" class="btn btn-second dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                            สถานะ
+                                        </button>
+                                        <ul id="statusroom" class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
+                                        </ul>
+                                    </div> -->
+                                    <!-- <div class="col-lg-12">
+                                        <div class="input-group input-sreach">
+                                            <input type="search" class="form-control rounded btn-search" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                            <button type="button" class="btn btn-primary">search</button>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_text_image pt32 pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+                            <div class="container">
+                                <div id="listroom" class="row align-items-center">
+                                    
+                                </div>
+                            </div>
+                        </section>
+                        
+                    </div>
+                </t>
+            </t>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="/lsr/static/src/js/gobalparam.js"></script>
+            <script src="/lsr/static/src/js/roomtype.js"></script>
+        </template>
+
+        <!-- Calendar -->
+        <template id="calendarroom">
+            <head>
+                <link rel="stylesheet" href='/lsr/static/src/css/test.css'/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+
+                <!-- datatables -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+                <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+                <link rel="stylesheet" href="https://cdn.datatables.net/select/2.1.0/css/select.bootstrap5.css"/>
+            </head>
+            <t t-name="website.lsr">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'calendar'"/>
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="s_carousel_intro_wrapper p-0" data-snippet="s_carousel_intro" data-name="Carousel Intro">
+                            <div class="s_carousel_intro s_carousel_default carousel slide o_colored_level carousel-dark" data-bs-interval="10000" id="myCarousel1729843347860" data-bs-ride="true">
+                                <div class="carousel-inner">
+                                    <div class="s_carousel_intro_item carousel-item px-0 o_colored_level bg-header p-header active" data-name="Slide" style="">
+                                        <div class="container">
+                                            <div class="row o_grid_mode" data-row-count="6">
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-4 col-lg-6" data-name="Block" style="z-index: 1; grid-area: 2 / 1 / 6 / 7;">
+                                                    <h1 class="display-3-fs">Calendar</h1>
+                                                    <h2 class="display-3-fs" id="h-room"></h2>
+                                                </div>
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-2 col-lg-6" data-name="Block" style="z-index: 2; grid-area: 2 / 7 / 4 / 13; --grid-item-padding-y: 0px;">
+                                                    <p class="lead" id="detailroom">
+                                                        ปฏิทินการใช้ห้อง Learning Space Reservation
+                                                    </p>
+                                                </div>
+                                                
+                                                <div class="o_grid_item o_grid_item_image g-col-lg-6 o_colored_level g-height-4 col-lg-6" data-name="Block" style="z-index: 3; grid-area: 3 / 7 / 7 / 13;">
+                                                    <img id="imgroom" src="/lsr/static/src/img/roomtype1.jpg" class="img img-fluid" loading="lazy" contenteditable="true"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_table_of_content pt24 pb24 o_cc o_cc1 o_colored_level" data-name="Table of Content" style="background-image: none;">
+                            <div class="container position-relative">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <!-- <h4>calendar</h4> -->
+                                        <div id="calendar" class=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_numbers pt32 pb32" data-snippet="s_numbers" data-name="Numbers">
+                            <div class="oe_structure oe_empty">
+                                
+                                <!-- Modal More Link -->
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">				
+                                            <table id="example" class="table table-striped" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">No.</th>
+                                                        <th class="text-center">Name</th>
+                                                        <th class="text-center">Date</th>
+                                                        <th class="text-center">Time</th>
+                                                        <th class="text-center">Detail</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="exampleBody">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">View Detail</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal Event -->
+                                <div class="modal fade" id="modalEvent" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEvent" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="eventtitle">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input class="form-control m-input" type="text" id="eventName"/>
+                                            </div>
+
+                                            <div class="form-group form-inline">
+                                                <div class="input-group date m-input" data-provide="datepicker">
+                                                    <input type="text" id="eventDueDate" class="form-control"/>
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <textarea class="form-control m-input" type="text" rows="4" id= "eventDescription"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">View Detail</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </section>
+                    </div>
+                </t>
+            </t>
+            
+            
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                <!-- fullcalendar JavaScript -->  
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+                <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.14/index.global.min.js"></script>
+                
+                <!-- Datatables JavaScript -->  
+                <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+                <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+                <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+
+                <!-- Custom JavaScript --> 
+                <script src='/lsr/static/src/js/gobalparam.js'></script> 
+                <script src='/lsr/static/src/js/calendar.js'></script>
+        </template>
+
+        <!-- Reservation -->
+        <template id="reservation">
+            <head>
+                <!-- Bootstrap -->
+                <link rel="stylesheet" href='/lsr/static/src/css/test.css'/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+                
+                <!-- Datepicker -->
+                <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/ui-lightness/jquery-ui.css"/>
+                <!-- Timepicker -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"/>
+
+            </head>
+            <t t-name="website.lsr">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'reservation'"/>
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="s_carousel_intro_wrapper p-0" data-snippet="s_carousel_intro" data-name="Carousel Intro">
+                            <div class="s_carousel_intro s_carousel_default carousel slide o_colored_level carousel-dark" data-bs-interval="10000" id="myCarousel1729843347860" data-bs-ride="true">
+                                <div class="carousel-inner">
+                                    <div class="s_carousel_intro_item carousel-item px-0 o_colored_level bg-header p-header active" data-name="Slide" style="">
+                                        <div class="container">
+                                            <div class="row o_grid_mode" data-row-count="6">
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-4 col-lg-6" data-name="Block" style="z-index: 1; grid-area: 2 / 1 / 6 / 7;">
+                                                    <h1 class="display-3-fs">Reservation</h1>
+                                                </div>
+                                                <div class="o_grid_item o_colored_level g-col-lg-6 g-height-2 col-lg-6" data-name="Block" style="z-index: 2; grid-area: 2 / 7 / 4 / 13; --grid-item-padding-y: 0px;">
+                                                    <p class="lead">
+                                                        Discover your perfect home with our expert real estate services that offer a seamless experience from search to closing.
+                                                    </p>
+                                                </div>
+                                                
+                                                <div class="o_grid_item o_grid_item_image g-col-lg-6 o_colored_level g-height-4 col-lg-6" data-name="Block" style="z-index: 3; grid-area: 3 / 7 / 7 / 13;">
+                                                    <img src="/lsr/static/src/img/roomtype1.jpg" class="img img-fluid" loading="lazy" contenteditable="true"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_website_form pt16 pb16 o_colored_level" data-vcss="001" data-snippet="s_website_form" data-name="Form" style="background-image: none;">
+                            <div class="container">
+                                <form action="/api/form/reservation" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="" data-success-mode="redirect" data-success-page="/booking-completed">
+                                    <div class="s_website_form_rows row s_col_no_bgcolor">
+                                        
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required o_draggable" data-type="char">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="name">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">ชื่อผู้จอง</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input class="form-control s_website_form_input" type="text" name="name" required="1" data-fill-with="name" id="name"/>
+                                                    <input class="form-control s_website_form_input d-none" type="text" name="id" required="1" data-fill-with="id" id="id"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_model_required o_draggable" data-type="email">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="email">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">Email</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input class="form-control s_website_form_input" type="email" name="email" required="1" data-fill-with="email" id="email"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_model_required o_draggable" data-type="char">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="title">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">เรื่อง</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input class="form-control s_website_form_input" type="text" name="title" required="1" id="title"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_model_required o_draggable" data-type="char">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="purpose">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">วัตถุประสงค์</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input class="form-control s_website_form_input" type="text" name="purpose" required="1" id="purpose"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-lg-6 s_website_form_custom s_website_form_required o_draggable" data-type="text">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="floor">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">ชั้น</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <select class="form-select" id="floor" name="floor">
+                                                    </select> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-lg-6 s_website_form_custom s_website_form_required o_draggable" data-type="text">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="room">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">ห้อง</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <select class="form-select" id="room" name="room">
+                                                    </select> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required o_draggable" data-type="text">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="datepicker">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">วันที่</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input class="form-control s_website_form_input" type="text" name="date" required="" id="datepicker"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required o_draggable" data-type="text">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="start_time">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">เวลาเริ่ม</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input class="form-control s_website_form_input timepicker " type="text" name="start_time" required="" id="start_time"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required o_draggable" data-type="text">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="end_time">
+                                                    <span class="s_website_form_label_content o_default_snippet_text">เวลาสิ้นสุด</span>
+                                                    <span class="s_website_form_mark o_default_snippet_text"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input class="form-control s_website_form_input timepicker " type="text" name="end_time" required="" id="end_time"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_dnone">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px">
+                                                    <span class="s_website_form_label_content"></span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <input type="hidden" class="form-control s_website_form_input" name="email_to" value="info@yourcompany.example.com"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-0 py-2 col-12 s_website_form_submit o_draggable" data-name="Submit Button">
+                                            <div style="width: 200px;" class="s_website_form_label"></div>
+                                                <!-- <button type="submit" class="btn btn-primary s_website_form_send o_default_snippet_text" contenteditable="true">Submit</button> -->
+                                            <!-- <span id="s_website_form_result"></span> -->
+                                                <a href="#" role="button" class="btn btn-primary s_website_form_send">Submit</a>
+                                                <span id="s_website_form_result"></span>
+                                        </div>
+                                        <!-- <t t-if="website_form_succeeded">
+                                            <t t-esc="redirect('/thanks')"/>
+                                        </t> -->
+
+                                    </div>
+                                </form>
+                            </div>
+                        </section>    
+                        <!-- <div id="successDialog" title="Success">
+                            <p>คุณได้ทำการจองห้องสำเร็จแล้ว</p>
+                        </div> 
+                        <div id="unsuccessfulDialog" title="Unsuccessful">
+                            <p>คุณจองห้องไม่สำเร็จ. กรุณาลองใหม่อีกครั้ง</p>
+                        </div>                -->
+                    </div>
+                </t>
+            </t>
+            <!-- JQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+            <!-- moment -->
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script> -->
+            <!-- Datepicker -->
+            <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+            <!-- Timepicker -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
+            <!-- Custom JavaScript -->  
+            <script src='/lsr/static/src/js/reservation.js'></script>
+        </template>
+
+        <record id="lsr.dialog_susscess" model="website.page">
+            <field name="name">Reservation Completed</field>
+            <field name="type">qweb</field>
+            <field name="url">/booking-completed</field>
+            <field name="website_indexed" eval="False"/>
+            <field name="is_published">True</field>
+            <field name="key">lsr.booking_completed</field>
+            <field name="arch" type="xml">
+                <t name="Reservation Completed" t-name="lsr.booking_completed">
+                    <head>
+                        <!-- Bootstrap -->
+                        <link rel="stylesheet" href='/lsr/static/src/css/test.css'/>
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+                    </head>
+                    <t t-call="website.layout">
+                        <div id="wrap" class="oe_structure oe_empty">
+                            <section class="s_text_block pt40 pb40 o_colored_level " data-snippet="s_text_block">
+                                <div class="container p-header s_allow_columns">
+                                    <div class="row">
+                                        <div class="col-lg-12 me-lg-auto">
+                                            <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/><br/>
+                                            <h1 class="text-center">Completed!</h1>
+                                            <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                                <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                            </div>
+                                            <h5 class="text-center">
+                                                <span class="fa fa-check-circle"/>
+                                                <span>Reservation <b>Completed</b></span>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- <input t-if='website.plausible_shared_key' type='hidden' class='js_plausible_push' data-event-name='Lead Generation' data-event-params='{"CTA": "Contact Us"}' /> -->
+                    </t>
+                </t>
+            </field>
+        </record>
+
+    </data>
+</odoo>

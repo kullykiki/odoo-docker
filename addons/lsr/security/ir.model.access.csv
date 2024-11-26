@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lsr_room,lsr.room,model_lsr_room,base.group_user,1,1,1,1
+access_lsr_m_room_type,lsr.m_room_type,model_lsr_m_room_type,base.group_user,1,1,1,1
+access_lsr_booking,lsr.booking,model_lsr_booking,base.group_user,1,1,1,1

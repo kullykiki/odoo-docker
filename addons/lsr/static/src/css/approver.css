@@ -1,0 +1,50 @@
+.bg-itkmitl{
+    background-color: #1d3557;
+}
+.modal-header{
+    border-bottom: 1px solid lightgray !important;
+}
+.modal-footer {
+    border-top: 1px solid lightgray !important;
+}
+.modal-footer > button{
+    border-radius: 20px;
+    font-size: small;
+    font-weight: bold;
+}
+.modal-title-desc{
+    color: lightgray !important;
+    font-size: 16px !important;
+    font-family: 'Prompt' , sans-serif;
+}
+.btn-modal-close{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: absolute;
+    top: -18px;
+    right: 10px;
+}
+.btn-approve{
+    background-color: #1d3557 !important;
+    color: whitesmoke !important;
+}
+
+.detail-data{
+    background-color: rgba(149, 191, 218, 0.2);
+    border-radius: 8px;
+    height: 88px;
+    margin-top: 16px;
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); */
+}
+
+.modal-body > div > i {
+    width: 36px;
+    color: #B3B3B3;
+}
+
+.room-data, .date-data{
+    font-size: 32px;
+}
+div.modal-body > div > span{
+    font-size: 16px;
+}

@@ -1,0 +1,42 @@
+.calendar-toolbar {
+  margin-bottom: 10px;
+}
+.calendar-month-row {
+  height: 75px;
+}
+.calendar-prior-months-date {
+  color: #ddd;
+}
+.calendar-current-date {
+  text-align: center;
+  display: inline-block;
+  width: 115px;
+}
+
+.approve-main-page {
+  height: 100vh;
+  position: relative;
+}
+
+.approve-content{
+  height: 100%;
+  padding: 16px;
+}
+
+.approver-modal-header{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+tr > th{
+  width: 25%;
+}
+
+@media only screen and (max-width: 765px) {
+  .fc {
+    font-size: small !important;
+  }
+  .fc .fc-toolbar-title {
+    font-size: small !important;
+    text-align: center;
+  }
+}
