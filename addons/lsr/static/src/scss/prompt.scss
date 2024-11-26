@@ -1,0 +1,38 @@
+// ------------------------------------------------------------------
+// Prompt
+// ------------------------------------------------------------------
+$prompt-font-path: '../font/Prompt';
+
+@mixin prompt-font($type, $weight, $style) {
+    @font-face {
+        font-family: 'Prompt';
+        src: url('#{$prompt-font-path}/Prompt-#{$type}.eot');
+        src: url('#{$prompt-font-path}/Prompt-#{$type}.eot?#iefix') format('embedded-opentype'),
+             url('#{$prompt-font-path}/Prompt-#{$type}.woff') format('woff'),
+             url('#{$prompt-font-path}/Prompt-#{$type}.ttf') format('truetype'),
+             url('#{$prompt-font-path}/Prompt-#{$type}.svg#Almarai') format('svg');
+        font-weight: $weight;
+        font-style: $style;
+    }
+
+    @font-face {
+        font-family: 'prompt-#{$type}';
+        src: url('#{$prompt-font-path}/Prompt-#{$type}.eot');
+        src: url('#{$prompt-font-path}/Prompt-#{$type}.eot?#iefix') format('embedded-opentype'),
+             url('#{$prompt-font-path}/Prompt-#{$type}.woff') format('woff'),
+             url('#{$prompt-font-path}/Prompt-#{$type}.ttf') format('truetype'),
+             url('#{$prompt-font-path}/Prompt-#{$type}.svg#Almarai') format('svg');
+    }
+}
+
+@mixin prompt-font-pair($type, $weight) {
+    @include prompt-font('#{$type}', $weight, normal);
+    @include prompt-font('#{$type}Italic', $weight, italic);
+}
+
+
+
+@include prompt-font-pair('Light', 300);
+@include prompt-font-pair('Regular', 400);
+@include prompt-font-pair('Bold', 700);
+@include prompt-font-pair('Extrabold', 800);
