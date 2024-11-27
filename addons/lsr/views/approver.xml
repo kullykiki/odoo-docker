@@ -77,7 +77,6 @@
                 <t t-set="pageName" t-value="'calendar'" />
                 <div class="approve-main-page p-header">
                     <div class="approve-content">
-                        <p><t t-esc="user_id.name[:23]" /></p>
                         <section>
                             <div id="calendar"></div>
                         </section>
