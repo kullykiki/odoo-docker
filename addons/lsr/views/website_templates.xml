@@ -251,7 +251,7 @@
                 </t>
             </t>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-            <script src="/lsr/static/src/js/gobalparam.js"></script>
+            <script src="/lsr/static/src/js/param.js"></script>
             <script src="/lsr/static/src/js/roomtype.js"></script>
         </template>
 
@@ -392,7 +392,7 @@
                 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 
                 <!-- Custom JavaScript --> 
-                <script src='/lsr/static/src/js/gobalparam.js'></script> 
+                <script src='/lsr/static/src/js/param.js'></script> 
                 <script src='/lsr/static/src/js/calendar.js'></script>
         </template>
 

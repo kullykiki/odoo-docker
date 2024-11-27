@@ -17,26 +17,8 @@ class ApproverLSR(http.Controller):
     @http.route('/api/approver_result/approve', type='json', auth="public", methods=['POST'])
     def get_approve_result(self, **kw):
         data = json.loads(request.httprequest.data)
-        # data = json.load()
-        # booking_rec = request.env['lsr.booking'].search([('id','=',data["id"])])
         booking_rec = request.env['lsr.booking'].browse(int(data["id"])).write({'result': data["result"],'approver':request.env.user.employee_ids[0],'approved_time':datetime.now(),'status':'done'})
-            # booking_rec.write({"result":data["result"]})
-        
-        # print("success post")
-        # record_id = record_id
-        # try :
-        #     id = kw.get('id')
-        #     result = kw.get('result')
-        #     approver = kw.get('approver')
-        # except Exception as e:
-        #     strStatus = {'error': f'An error occurred: {str(e)}'}
-        
-        # headers = {'Content-Type': 'application/json'}
-        # body = { 'results': 'POST SUCCESS' }
-        # def date_handler(obj):
-        #     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
         return {'result': booking_rec,'current_user':request.env.user}
-        # return json.dumps(strStatus)
     
     @http.route('/api/pending/booking_get', type='http', auth='user', methods=['GET'])
     def get_pending_booking(self):

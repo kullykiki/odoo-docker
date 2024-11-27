@@ -180,7 +180,7 @@
         <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 
         <!-- Custom JavaScript -->
-        <script src='/lsr/static/src/js/gobalparam.js'></script>
+        <script src='/lsr/static/src/js/param.js'></script>
         <script src='/lsr/static/src/js/approver.js'></script>
     </template>
 

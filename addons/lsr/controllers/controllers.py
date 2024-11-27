@@ -171,7 +171,7 @@ class Lsr(http.Controller):
         if (s_date != "0") and (e_date != "0") :   
             start_datetime = datetime.strptime(s_date, '%d-%m-%Y %H:%M')
             end_datetime = datetime.strptime(e_date, '%d-%m-%Y %H:%M')
-            room_id = request.env['lsr.booking'].search(["|","&",('start_date','<=',start_datetime),('end_date','<=',start_datetime), "&", ('start_date','>=',end_datetime),('end_date','>=',end_datetime)])
+            room_id = request.env['lsr.booking'].search(["|","&",('start_date','>=',start_datetime),('start_date','<=',end_datetime), "&", ('end_date','>=',start_datetime),('end_date','<=',end_datetime)])
             room_list = []
             for roomid in room_id:
                 room_list.append(roomid.room.id)
@@ -197,15 +197,16 @@ class Lsr(http.Controller):
     
     @http.route('/api/booking_get/date/<string:date_id>/room/<int:room_id>', type='http', auth='user', methods=['GET'])
     def api_get_booking(self, date_id, room_id):
-        # products = request.env['lsr.booking'].search([])
-        start_time = date_id + " 00:00"
-        start_datetime = datetime.strptime(start_time, '%d-%m-%Y %H:%M')
-        end_time = date_id + " 23:59"
-        end_datetime = datetime.strptime(end_time, '%d-%m-%Y %H:%M')
+        # products = request.env['lsr.booking'].search([('room.id','=',room_id)])
+        # products = []
         product_list = []
-        if (date_id != 0) and (room_id != 0) :   
+        if (date_id != "0") and (room_id != 0) :   
+            start_time = date_id + " 00:00"
+            start_datetime = datetime.strptime(start_time, '%d-%m-%Y %H:%M')
+            end_time = date_id + " 23:59"
+            end_datetime = datetime.strptime(end_time, '%d-%m-%Y %H:%M')
             products = request.env['lsr.booking'].search([('room.id','=',room_id),'&',('start_date','>=',start_datetime),('end_date','<=',end_datetime)])
-        elif (date_id == 0) and (room_id != 0) :
+        elif (date_id == "0") and (room_id != 0) :
             products = request.env['lsr.booking'].search([('room.id','=',room_id)])
         else :
             products = request.env['lsr.booking'].search([])
@@ -219,6 +220,7 @@ class Lsr(http.Controller):
                 'title' : product.title,
                 'purpose' : product.purpose,
                 'room' : product.room.name,
+                'room_id' : product.room.id,
                 'floor' : product.room.floor,
                 # 'type' : product.room.type,
                 # 'floor' : product.room.floor
@@ -236,13 +238,13 @@ class Lsr(http.Controller):
         booker = http.request.env.user.id
         employee = request.env['hr.employee'].search([('user_id', '=', booker)], limit=1)
 
-        if (date_id != 0) and (room_id != 0) :   
+        if (date_id != "0") and (room_id != 0) :   
             start_time = date_id + " 00:00"
             start_datetime = datetime.strptime(start_time, '%d-%m-%Y %H:%M')
             end_time = date_id + " 23:59"
             end_datetime = datetime.strptime(end_time, '%d-%m-%Y %H:%M')
             products = request.env['lsr.booking'].search([('booker.id','=',employee.id),'&',('start_date','>=',start_datetime),('end_date','<=',end_datetime)])
-        elif (date_id == 0) and (room_id != 0) :
+        elif (date_id == "0") and (room_id != 0) :
             products = request.env['lsr.booking'].search([('room.id','=',room_id),('booker.id','=',employee.id)])
         else :
             products = request.env['lsr.booking'].search([('booker','=',employee.id)])
@@ -269,7 +271,7 @@ class Lsr(http.Controller):
             return obj.isoformat() if hasattr(obj, 'isoformat') else obj
         return Response(json.dumps(body, default=date_handler), headers=headers)
     
-    @http.route('/api/form/reservation', type='http', auth="public", methods=['POST'], website=True, sitemap=False)
+    @http.route('/api/form/reservation', type='http', auth="user", methods=['POST'], website=True, sitemap=False)
     def form_view(self, **kw):
         strStatus = {}
         try :
@@ -286,7 +288,7 @@ class Lsr(http.Controller):
             email = kw.get('email')
 
             # ค้นหาพนักงานจากอีเมล
-            employee = request.env['hr.employee'].search([('user_id', '=', booker)], limit=1)
+            employee = request.env['hr.employee'].search([('user_id.id', '=', booker)], limit=1)
 
             
             # บันทึกลงในโมเดล

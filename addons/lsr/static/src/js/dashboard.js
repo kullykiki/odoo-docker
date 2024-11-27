@@ -31,7 +31,7 @@ $(document).ready(function(){
     },
     events: function( fetchInfo, successCallback, failureCallback ) { //include the parameters fullCalendar supplies to you!
         jQuery.ajax({
-            url: 'http://localhost:8069/api/userbooking_get/date/0/room/'+room,
+            url: '/api/userbooking_get/date/0/room/'+room,
             type: 'GET',
             dataType: 'json',
             data: '',
@@ -42,9 +42,9 @@ $(document).ready(function(){
                     var docs = doc.results.data;
                     docs.forEach(function (evt) {
                         events.push({
-                            title: evt.title, //get_time(evt.start_date) + "-" +get_time(evt.end_date) + " " + evt.title,
+                            title: evt.title,
                             start: evt.start_date,
-                            end: evt.end_date,
+                            // end: evt.end_date,
                             description: get_time(evt.start_date) + "-" +get_time(evt.end_date) + " " + evt.title +"\n" +evt.purpose,
                             name : evt.title,
                             time: get_time(evt.start_date) + "-" +get_time(evt.end_date),
@@ -77,7 +77,7 @@ $(document).ready(function(){
     $('#history_profile_body').empty();
     var idtable = document.getElementById('history_profile');
     jQuery.ajax({
-        url: 'http://localhost:8069/api/userbooking_get/date/0/room/0',
+        url: '/api/userbooking_get/date/0/room/0',
         type: 'GET',
         dataType: 'json',
         data: '',

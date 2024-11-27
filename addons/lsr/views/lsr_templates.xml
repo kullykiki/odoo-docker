@@ -221,7 +221,7 @@
                         <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
                             <div class="container-custom">
                                 <div id="search_detail" class="row justify-content-md-center py-4">
-                                    <div class="mb-3 col-md-5 col-12">
+                                    <div class="mb-3 col-md-4 col-12">
                                         <div class="row s_col_no_resize s_col_no_bgcolor">
                                             <label class="col-form-label col-sm-auto" for="datepicker">
                                                 <span class="o_default_snippet_text">วันที่</span>
@@ -251,7 +251,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mb-3 col-md-1 col-12">
+                                    <div class="mb-3 col-md-2 col-12">
                                         <div class="btn-group w-100" role="group" aria-label="Basic outlined example">
                                             <button id="roomsearch" type="button" class="btn btn-sm btn-outline-danger" style="text-align: center;padding: 3px;">
                                                 <i class="fs-5 bi-search me-2"></i>Search

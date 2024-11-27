@@ -49,7 +49,7 @@ function formattedDate(dateStr){
 function dropdowmfloor(id,roomid){
     $('#floor').empty();
     jQuery.ajax({
-        url: 'http://localhost:8069/api/floor_get',
+        url: '/api/floor_get',
         type: 'GET',
         dataType: 'json',
         data: '',
@@ -82,7 +82,7 @@ function dropdowmfloor(id,roomid){
 function dropdowmroom(floor,roomid){
     $('#room').empty();
     jQuery.ajax({
-        url: 'http://localhost:8069/api/room_get/floor/'+floor,
+        url: '/api/room_get/floor/'+floor,
         type: 'GET',
         dataType: 'json',
         data: '',

@@ -45,7 +45,7 @@ $(document).ready(function(){
         },
         events: function( fetchInfo, successCallback, failureCallback ) { //include the parameters fullCalendar supplies to you!
             jQuery.ajax({
-                url: 'http://localhost:8069/api/booking_get/date/0/room/'+room,
+                url: '/api/booking_get/date/0/room/'+room,
                 type: 'GET',
                 dataType: 'json',
                 data: '',
@@ -106,7 +106,7 @@ function defaultRoom(id) {
     $('#detailroom').text("");
     $('#imgroom').attr("");
     jQuery.ajax({
-        url: 'http://localhost:8069/api/room_get/room/'+id,
+        url: '/api/room_get/room/'+id,
         type: 'GET',
         dataType: 'json',
         data: '',
@@ -129,7 +129,7 @@ function modalEvent(){
     var idtable = document.getElementById('example');
     $('#exampleBody').empty();
     jQuery.ajax({
-        url: 'http://localhost:8069/api/booking_get/date/0/room/'+room,
+        url: '/api/booking_get/date/0/room/'+room,
         type: 'GET',
         dataType: 'json',
         data: '',

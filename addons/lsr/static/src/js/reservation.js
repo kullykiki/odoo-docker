@@ -37,7 +37,7 @@ $("#roomsearch").on("click", function() {
 function get_detailroom(date,s_time,e_time){
     $('#listroom_detail').empty();
     jQuery.ajax({
-        url: host+'/api/room_get/date/'+date+" "+s_time+'/to/'+date+" "+e_time,
+        url: '/api/room_get/date/'+date+" "+s_time+'/to/'+date+" "+e_time,
         type: 'GET',
         dataType: 'json',
         data: '',
