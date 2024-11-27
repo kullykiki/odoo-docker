@@ -97,15 +97,28 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: '/api/approver_result/approve',
-            data: JSON.stringify({"record_id":event_id}),
-            success: ()=>console.log("success",event_id),
+            data: JSON.stringify({"id":event_id,"result":"reject"}),
+            success: () => {
+                $('#modalEvent').modal('hide');
+                window.location.reload()
+            },
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
           });
-        $('#modalEvent').modal('hide');
+        
     })
     $('#btn-approve').on('click', function() {
-        console.log("approve!")
+        $.ajax({
+            type: "POST",
+            url: '/api/approver_result/approve',
+            data: JSON.stringify({"id":event_id,"result":"approved"}),
+            success: () => {
+                $('#modalEvent').modal('hide');
+                window.location.reload()
+            },
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+          });
         $('#modalEvent').modal('hide');
     })
 })

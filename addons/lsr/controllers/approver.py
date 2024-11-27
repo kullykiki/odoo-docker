@@ -3,6 +3,7 @@ import logging
 
 from odoo import fields, http, tools, _
 from odoo.http import request, Response
+from datetime import datetime
 
 import logging
 
@@ -15,9 +16,12 @@ class ApproverLSR(http.Controller):
 
     @http.route('/api/approver_result/approve', type='json', auth="public", methods=['POST'])
     def get_approve_result(self, **kw):
-        text = json.loads(request.httprequest.data)
+        data = json.loads(request.httprequest.data)
         # data = json.load()
-        # booking_list = request.env['lsr.booking'].search([('id','=','pending')])
+        # booking_rec = request.env['lsr.booking'].search([('id','=',data["id"])])
+        booking_rec = request.env['lsr.booking'].browse(int(data["id"])).write({'result': data["result"],'approver':request.env.user.employee_ids[0],'approved_time':datetime.now(),'status':'done'})
+            # booking_rec.write({"result":data["result"]})
+        
         # print("success post")
         # record_id = record_id
         # try :
@@ -31,7 +35,7 @@ class ApproverLSR(http.Controller):
         # body = { 'results': 'POST SUCCESS' }
         # def date_handler(obj):
         #     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
-        return {'result': text,'current_user':request.env.user}
+        return {'result': booking_rec,'current_user':request.env.user}
         # return json.dumps(strStatus)
     
     @http.route('/api/pending/booking_get', type='http', auth='user', methods=['GET'])
