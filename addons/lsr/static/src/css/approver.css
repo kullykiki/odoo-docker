@@ -4,6 +4,10 @@
 .modal-header{
     border-bottom: 1px solid lightgray !important;
 }
+.modal-title{
+    font-family: prompt, serif !important;
+}
+
 .modal-footer {
     border-top: 1px solid lightgray !important;
 }
@@ -29,11 +33,13 @@
     color: whitesmoke !important;
 }
 
+
 .detail-data{
     background-color: rgba(149, 191, 218, 0.2);
     border-radius: 8px;
     height: 88px;
     margin-top: 16px;
+    padding: 15px 20px;
     /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); */
 }
 
@@ -48,3 +54,7 @@
 div.modal-body > div > span{
     font-size: 16px;
 }
+.eventdesc{
+    font-size: 12px;
+}
+

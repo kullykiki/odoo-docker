@@ -36,10 +36,17 @@ $base-color-5 :  #FCFEFF;
       .p-header {
          padding-top: 40px !important;
          padding-bottom: 40px !important;
-       }
-  }
+      }
+   }
    body{
       background-color: white !important;
+      font-family: prompt, serif !important;
+      // font-weight: 500 !important;
+      font-style: normal !important;
+   }
+   h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+      font-family: prompt, serif !important;
+      font-style: normal !important;
    }
    .navbar-light  {
       background-color: $base-color-1 !important;
@@ -267,15 +274,17 @@ $base-color-5 :  #FCFEFF;
       background-clip: padding-box, border-box;
       background-origin: padding-box, border-box;
    }
-   .border-gradient-input:focus{
-      border: 1px solid transparent;
-      border-radius: 15px !important;
-      // background: linear-gradient(to right, white, white), linear-gradient(to right, $base-color-1 , $base-color-2);
-      background-origin: padding-box, padding-box;
-      background-clip: border-box, border-box;
-      background-clip: padding-box, border-box;
-      background-origin: padding-box, border-box;
-      box-shadow: 1px 1px 1px 1px #457b9d !important;
+   .form-control:focus {
+      background-color: #ffffff !important;
+      border-color: $base-color-3 !important;
+      outline: 0 !important;
+      box-shadow: 0 0 0 0.25rem #d7efff !important;
+   }
+   .form-select:focus {
+      background-color: #ffffff !important;
+      border-color: $base-color-3 !important;
+      outline: 0 !important;
+      box-shadow: 0 0 0 0.25rem #d7efff !important;
    }
    .border-gradient{
       border: 1px solid transparent;
@@ -308,7 +317,7 @@ $base-color-5 :  #FCFEFF;
       background-color: $base-color-1;
    }
 
-   //dashborad
+   // dashboard
    .btn-pending{
       color: white !important;
       background-color: $base-color-3 !important;

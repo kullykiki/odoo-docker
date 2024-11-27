@@ -1,3 +1,5 @@
+
+var event_id;
 $(document).ready(function(){
     var room = 1;
     var calendarEl = document.getElementById('calendar');
@@ -28,6 +30,7 @@ $(document).ready(function(){
                     var docs = doc.results.data;
                     docs.forEach(function (evt) {
                         events.push({
+                            id: evt.id,
                             title: evt.title,
                             // title: get_time(evt.start_date) + "-" +get_time(evt.end_date) + " " + evt.title,
                             start: evt.start_date,
@@ -51,10 +54,11 @@ $(document).ready(function(){
     eventClick: function(info) {
         $('#eventorder').text(info.event._def.extendedProps.name);
         $('#eventName').text(info.event.title);
-        $('#eventroom').text(info.event.extendedProps.room);
+        // $('#eventroom').text(info.event.extendedProps.room);
         $('#eventDueDate').text(info.event.extendedProps.time);
         $('#modalEvent').modal('show');
-        // console.log(info)
+        event_id = info.event.id
+        console.log(event_id)
     },
     eventTimeFormat: { 
         hour: '2-digit',
@@ -87,3 +91,22 @@ function get_date(events_time){
     // var time = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
     return (date); 
 }
+
+$(document).ready(function() {
+    $('#btn-reject').on('click', function() {
+        $.ajax({
+            type: "POST",
+            url: '/api/approver_result/approve',
+            data: JSON.stringify({"record_id":event_id}),
+            success: ()=>console.log("success",event_id),
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+          });
+        $('#modalEvent').modal('hide');
+    })
+    $('#btn-approve').on('click', function() {
+        console.log("approve!")
+        $('#modalEvent').modal('hide');
+    })
+})
+

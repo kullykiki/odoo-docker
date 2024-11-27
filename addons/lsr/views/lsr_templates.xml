@@ -19,10 +19,10 @@
                 </t>
             </t>
         </template>
-        <!-- lsr lsr_dashborad-->
-        <template id="lsr_dashborad">
+        <!-- lsr lsr_dashboard-->
+        <template id="lsr_dashboard">
             <head>
-                <link rel="stylesheet" href='/lsr/static/src/css/lsr_dashborad.css'/>
+                <link rel="stylesheet" href='/lsr/static/src/css/lsr_dashboard.css'/>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
                 <!-- datatable -->
@@ -32,7 +32,7 @@
             </head>
             <t t-name="website.lsr">
                 <t t-call="website.layout">
-                    <t t-set="pageName" t-value="'lsr_dashborad'"/>
+                    <t t-set="pageName" t-value="'lsr_dashboard'"/>
                     <div id="wrap" class="oe_structure oe_empty" position="replace">
                         <!-- header -->
                         <section class="p-header bg-header s_three_columns pt32 pb32 o_colored_level" data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="background-image: none;">
@@ -119,7 +119,7 @@
             <script src="https://cdn.datatables.net/responsive/3.0.3/js/responsive.dataTables.js"></script>
 
             <!-- Custom JavaScript --> 
-            <script src='/lsr/static/src/js/dashborad.js'></script>
+            <script src='/lsr/static/src/js/dashboard.js'></script>
         </template>
 
         <!-- Room Type -->
@@ -192,6 +192,97 @@
             </t>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
             <script src="/lsr/static/src/js/room_detail.js"></script>
+        </template>
+
+        <!-- Reservation -->
+        <template id="reservation">
+            <head>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+                
+                <!-- Datepicker -->
+                <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/ui-lightness/jquery-ui.css"/>
+                <!-- Timepicker -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"/>
+            </head>
+            <t t-name="website.lsr">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'reservation'"/>
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <!-- header -->
+                        <section class="p-header">
+                            <div class="container-custom s_allow_columns">
+                                <h2 class="display-3-fs pt32 ps-3" style="text-align: left;">Reservation</h2>
+                                <div class="ps-4">
+                                    <hr class="hr-divide-2"/>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+                            <div class="container-custom">
+                                <div id="search_detail" class="row justify-content-md-center py-4">
+                                    <div class="mb-3 col-md-5 col-12">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <label class="col-form-label col-sm-auto" for="datepicker">
+                                                <span class="o_default_snippet_text">วันที่</span>
+                                            </label>
+                                            <div class="col-sm">
+                                                <input class="form-control border-gradient-input" type="text" name="date" id="datepicker"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 col-md-3 col-6">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <label class="col-form-label col-sm-auto" for="datepicker">
+                                                <span class="o_default_snippet_text">เริ่ม</span>
+                                            </label>
+                                            <div class="col-sm">
+                                                <input class="form-control border-gradient-input timepicker" type="text" name="start_time" id="start_time"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 col-md-3 col-6">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <label class="col-form-label col-sm-auto" for="datepicker">
+                                                <span class="o_default_snippet_text">สิ้นสุด</span>
+                                            </label>
+                                            <div class="col-sm">
+                                                <input class="form-control border-gradient-input timepicker" type="text" name="end_time" id="end_time"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 col-md-1 col-12">
+                                        <div class="btn-group w-100" role="group" aria-label="Basic outlined example">
+                                            <button id="roomsearch" type="button" class="btn btn-sm btn-outline-danger" style="text-align: center;padding: 3px;">
+                                                <i class="fs-5 bi-search me-2"></i>Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+                            <div class="container-custom">
+                                <div id="listroom_detail" class="justify-content-md-center py-4">
+                                    
+                                </div>
+                            </div>
+                        </section>
+                        
+                    </div>
+                </t>
+            </t>
+            <!-- JQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+            <!-- moment -->
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script> -->
+            <!-- Datepicker -->
+            <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+            <!-- Timepicker -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
+            <!-- Custom JavaScript -->  
+            <script src='/lsr/static/src/js/reservation.js'></script>
         </template>
 
         <!-- Calendar -->
@@ -328,8 +419,8 @@
                 <script src='/lsr/static/src/js/calendar.js'></script>
         </template>
 
-        <!-- Reservation -->
-        <template id="reservation">
+        <!-- Reservation Form -->
+        <template id="reservation_form">
             <head>
                 <!-- Bootstrap -->
                 <link rel="stylesheet" href='/lsr/static/src/css/test.css'/>
@@ -344,7 +435,7 @@
             </head>
             <t t-name="website.lsr">
                 <t t-call="website.layout">
-                    <t t-set="pageName" t-value="'reservation'"/>
+                    <t t-set="pageName" t-value="'reservation form'"/>
                     <div id="wrap" class="oe_structure oe_empty">
                         <!-- header -->
                         <section class="p-header">
@@ -357,11 +448,10 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="pt24 pb24" data-vcss="001" data-snippet="s_website_form" data-name="Form" style="background-image: none;">
+                        <section class="s_website_form pt24 pb24" data-vcss="001" data-snippet="s_website_form" data-name="Form" style="background-image: none;">
                             <div class="container-custom">
-                                <form action="/api/form/reservation" method="post" enctype="multipart/form-data" class="o_mark_required px-4 py-4" data-mark="*" data-pre-fill="true" data-model_name="" data-success-mode="redirect" data-success-page="/booking-completed">
+                                <form action="/api/form/reservation" method="post" enctype="multipart/form-data" class="o_mark_required px-4 py-4" data-mark="*" data-pre-fill="true" data-model_name="" data-success-mode="redirect" data-success-page="/lsr/booking-completed">
                                     <div class="s_website_form_rows row s_col_no_bgcolor">
-                                        
                                         <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required o_draggable" data-type="char">
                                             <div class="row s_col_no_resize s_col_no_bgcolor">
                                                 <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="name">
@@ -465,8 +555,12 @@
                                             </div>
                                         </div>
                                         <div class="mb-0 py-2 col-12 s_website_form_submit o_draggable d-flex justify-content-end" data-name="Submit Button">
+                                            <div style="width: 200px;" class="s_website_form_label"></div>
                                             <a href="#" role="button" class="btn btn-outline-base4 btn-cancel me-4">Cancel</a>
                                             <a href="#" role="button" class="btn btn-primary s_website_form_send">Submit</a>
+                                            <!-- <span id="s_website_form_result"></span> -->
+                                        </div>
+                                        <div class="mb-0 py-2 col-12 s_website_form_submit o_draggable d-flex justify-content-end" data-name="Submit Button">
                                             <span id="s_website_form_result"></span>
                                         </div>
                                     </div>
@@ -486,13 +580,13 @@
             <!-- Timepicker -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
             <!-- Custom JavaScript -->  
-            <script src='/lsr/static/src/js/reservation.js'></script>
+            <script src='/lsr/static/src/js/reservation_form.js'></script>
         </template>
 
         <record id="lsr.dialog_susscess" model="website.page">
             <field name="name">Reservation Completed</field>
             <field name="type">qweb</field>
-            <field name="url">/booking-completed</field>
+            <field name="url">/lsr/booking-completed</field>
             <field name="website_indexed" eval="False"/>
             <field name="is_published">True</field>
             <field name="key">lsr.booking_completed</field>

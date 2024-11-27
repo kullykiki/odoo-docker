@@ -12,6 +12,27 @@ class ApproverLSR(http.Controller):
     # @http.route('/approver', type='http', auth="user", website=True, sitemap=True)
     # def index(self, **kw):
     #     return http.request.render('lsr.approver_calendar')
+
+    @http.route('/api/approver_result/approve', type='json', auth="public", methods=['POST'])
+    def get_approve_result(self, **kw):
+        text = json.loads(request.httprequest.data)
+        # data = json.load()
+        # booking_list = request.env['lsr.booking'].search([('id','=','pending')])
+        # print("success post")
+        # record_id = record_id
+        # try :
+        #     id = kw.get('id')
+        #     result = kw.get('result')
+        #     approver = kw.get('approver')
+        # except Exception as e:
+        #     strStatus = {'error': f'An error occurred: {str(e)}'}
+        
+        # headers = {'Content-Type': 'application/json'}
+        # body = { 'results': 'POST SUCCESS' }
+        # def date_handler(obj):
+        #     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
+        return {'result': text,'current_user':request.env.user}
+        # return json.dumps(strStatus)
     
     @http.route('/api/pending/booking_get', type='http', auth='user', methods=['GET'])
     def get_pending_booking(self):

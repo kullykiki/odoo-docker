@@ -8,7 +8,6 @@ $prompt-font-path: '../font/Prompt';
         font-family: 'Prompt';
         src: url('#{$prompt-font-path}/Prompt-#{$type}.eot');
         src: url('#{$prompt-font-path}/Prompt-#{$type}.eot?#iefix') format('embedded-opentype'),
-             url('#{$prompt-font-path}/Prompt-#{$type}.woff') format('woff'),
              url('#{$prompt-font-path}/Prompt-#{$type}.ttf') format('truetype'),
              url('#{$prompt-font-path}/Prompt-#{$type}.svg#Prompt') format('svg');
         font-weight: $weight;
@@ -19,7 +18,6 @@ $prompt-font-path: '../font/Prompt';
         font-family: 'prompt-#{$type}';
         src: url('#{$prompt-font-path}/Prompt-#{$type}.eot');
         src: url('#{$prompt-font-path}/Prompt-#{$type}.eot?#iefix') format('embedded-opentype'),
-             url('#{$prompt-font-path}/Prompt-#{$type}.woff') format('woff'),
              url('#{$prompt-font-path}/Prompt-#{$type}.ttf') format('truetype'),
              url('#{$prompt-font-path}/Prompt-#{$type}.svg#Prompt') format('svg');
     }
@@ -27,7 +25,7 @@ $prompt-font-path: '../font/Prompt';
 
 @mixin prompt-font-pair($type, $weight) {
     @include prompt-font('#{$type}', $weight, normal);
-    @include prompt-font('#{$type}Italic', $weight, italic);
+    // @include prompt-font('#{$type}Italic', $weight, italic);
 }
 
 

@@ -595,7 +595,7 @@
         <record id="lsr.dialog_susscess" model="website.page">
             <field name="name">Reservation Completed</field>
             <field name="type">qweb</field>
-            <field name="url">/booking-completed</field>
+            <field name="url">/lsr/booking-completed</field>
             <field name="website_indexed" eval="False"/>
             <field name="is_published">True</field>
             <field name="key">lsr.booking_completed</field>

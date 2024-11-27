@@ -34,11 +34,11 @@ class Lsr(http.Controller):
 
     @http.route('/', type='http', auth="user", website=True, sitemap=True)
     def lsr_portal(self, **kw):
-        return http.request.render('lsr.portal')
+        return http.request.render('lsr.lsr_dashboard')
     
     @http.route('/lsr/dashboard', type='http', auth="user", website=True, sitemap=True)
     def lsr_dashboard(self, **kw):
-        return http.request.render('lsr.lsr_dashborad')
+        return http.request.render('lsr.lsr_dashboard')
 
     @http.route('/lsr/roomtype', type='http', auth="user", website=True, sitemap=True)
     def lsr_roomtype(self, **kw):
@@ -62,7 +62,11 @@ class Lsr(http.Controller):
     
     @http.route('/lsr/pendingrequest', type='http', auth="user", website=True, sitemap=True)
     def lsr_pendingrequest(self, **kw):
-        return http.request.render('lsr.lsr_home')
+        return http.request.render('lsr.approver_calendar')
+    
+    @http.route('/lsr/reservation_form', type='http', auth="user", website=True, sitemap=True)
+    def lsr_reservation_form(self, **kw):
+        return http.request.render('lsr.reservation_form')
     
     # API
     
@@ -161,12 +165,46 @@ class Lsr(http.Controller):
             return obj.isoformat() if hasattr(obj, 'isoformat') else obj
         return Response(json.dumps(body, default=date_handler), headers=headers)
     
-    @http.route('/api/booking_get/date/<int:date_id>/room/<int:room_id>', type='http', auth='user', methods=['GET'])
+    @http.route('/api/room_get/date/<string:s_date>/to/<string:e_date>', type='http', auth='user', methods=['GET'])
+    def api_searchroom_date(self, s_date ,e_date):
+        products = []
+        if (s_date != "0") and (e_date != "0") :   
+            start_datetime = datetime.strptime(s_date, '%d-%m-%Y %H:%M')
+            end_datetime = datetime.strptime(e_date, '%d-%m-%Y %H:%M')
+            room_id = request.env['lsr.booking'].search(["|","&",('start_date','<=',start_datetime),('end_date','<=',start_datetime), "&", ('start_date','>=',end_datetime),('end_date','>=',end_datetime)])
+            room_list = []
+            for roomid in room_id:
+                room_list.append(roomid.room.id)
+                # ['|',(('start_date','<=',start_datetime),('end_date','<=',start_datetime)), (('start_date','>=',end_datetime),('end_date','>=',end_datetime))]).read('room.id')
+            products = request.env['lsr.room'].search([('id','not in',room_list)])
+        else :
+            products = request.env['lsr.room'].search([])
+
+        product_list = []
+        for product in products:
+            product_list.append({
+                'id': product.id,
+                'name': product.name,
+                'floor': product.floor,
+                'description': product.description,
+                'images' : "/web/image?model=lsr.room&id=%d&field=profile" % product.id
+            })
+        headers = {'Content-Type': 'application/json'}
+        body = { 'results': { 'code':200, 'message':'OK' ,'data' : product_list} }
+        def date_handler(obj):
+            return obj.isoformat() if hasattr(obj, 'isoformat') else obj
+        return Response(json.dumps(body, default=date_handler), headers=headers)
+    
+    @http.route('/api/booking_get/date/<string:date_id>/room/<int:room_id>', type='http', auth='user', methods=['GET'])
     def api_get_booking(self, date_id, room_id):
         # products = request.env['lsr.booking'].search([])
+        start_time = date_id + " 00:00"
+        start_datetime = datetime.strptime(start_time, '%d-%m-%Y %H:%M')
+        end_time = date_id + " 23:59"
+        end_datetime = datetime.strptime(end_time, '%d-%m-%Y %H:%M')
         product_list = []
         if (date_id != 0) and (room_id != 0) :   
-            products = request.env['lsr.booking'].search([])
+            products = request.env['lsr.booking'].search([('room.id','=',room_id),'&',('start_date','>=',start_datetime),('end_date','<=',end_datetime)])
         elif (date_id == 0) and (room_id != 0) :
             products = request.env['lsr.booking'].search([('room.id','=',room_id)])
         else :
@@ -191,14 +229,19 @@ class Lsr(http.Controller):
             return obj.isoformat() if hasattr(obj, 'isoformat') else obj
         return Response(json.dumps(body, default=date_handler), headers=headers)
     
-    @http.route('/api/userbooking_get/date/<int:date_id>/room/<int:room_id>', type='http', auth='user', methods=['GET'])
+    @http.route('/api/userbooking_get/date/<string:date_id>/room/<int:room_id>', type='http', auth='user', methods=['GET'])
     def api_get_userbooking(self, date_id, room_id):
         # products = request.env['lsr.booking'].search([])
         product_list = []
         booker = http.request.env.user.id
         employee = request.env['hr.employee'].search([('user_id', '=', booker)], limit=1)
+
         if (date_id != 0) and (room_id != 0) :   
-            products = request.env['lsr.booking'].search([('booker.id','=',employee.id)])
+            start_time = date_id + " 00:00"
+            start_datetime = datetime.strptime(start_time, '%d-%m-%Y %H:%M')
+            end_time = date_id + " 23:59"
+            end_datetime = datetime.strptime(end_time, '%d-%m-%Y %H:%M')
+            products = request.env['lsr.booking'].search([('booker.id','=',employee.id),'&',('start_date','>=',start_datetime),('end_date','<=',end_datetime)])
         elif (date_id == 0) and (room_id != 0) :
             products = request.env['lsr.booking'].search([('room.id','=',room_id),('booker.id','=',employee.id)])
         else :

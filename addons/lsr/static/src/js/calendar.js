@@ -25,7 +25,7 @@ $(document).ready(function(){
         dateClick: function(info) {
             // info contains information about the clicked date
             var clickedDate = info.dateStr; // The clicked date in YYYY-MM-DD format
-            var baseUrl = '/lsr/reservation';
+            var baseUrl = '/lsr/reservation_form';
             var params = { type: type, room: room, floor:floor, dateStr: clickedDate };
             
             // Convert parameters to a query string

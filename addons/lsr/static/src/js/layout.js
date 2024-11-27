@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#top_menu').removeClass('o_menu_loading');
     var urlpath = window.location.pathname;
-    var domainpath = urlpath.split("/")[1];
+    var domainpath = urlpath.split("/")[1] ? urlpath.split("/")[1] : "lsr";
     var path = urlpath.split("/")[2];
     var group = "";
     console.log('Current Path: ' + path);

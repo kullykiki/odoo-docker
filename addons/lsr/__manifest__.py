@@ -39,7 +39,11 @@ Long description of module's purpose
     'demo': [],
     'assets': {
         'web.assets_backend': [          
-            'lsr/static/src/scss/prompt.scss'
+            'lsr/static/src/scss/prompt.scss',
+            'lsr/static/wickedpicker/dist/wickedpicker.min.css',
+            'lsr/static/wickedpicker/dist/wickedpicker.min.js',
+            'lsr/static/src/xml/timepicker_templates.xml',
+            'lsr/static/src/js/time_widget.js',
         ],
         'web.assets_frontend': [          
             'lsr/static/src/scss/theme.scss',

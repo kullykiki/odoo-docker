@@ -56,8 +56,9 @@
 
     <template id="lsr.approver_calendar">
         <head>
-            <link rel="stylesheet" href='/lsr/static/src/css/test.css' />
             <link rel="stylesheet" href='/lsr/static/src/css/approver.css' />
+            <link href='/lsr/static/src/css/font-prompt.css' />
+            <link rel="stylesheet" href='/lsr/static/src/css/test.css' />
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
                 rel="stylesheet" />
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
@@ -76,6 +77,7 @@
                 <t t-set="pageName" t-value="'calendar'" />
                 <div class="approve-main-page p-header">
                     <div class="approve-content">
+                        <p><t t-esc="user_id.name[:23]" /></p>
                         <section>
                             <div id="calendar"></div>
                         </section>
@@ -121,12 +123,12 @@
                                 <!-- Modal Event -->
                                 <div class="modal fade" id="modalEvent" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1"
-                                    aria-labelledby="modalEvent" aria-hidden="true">
+                                    aria-labelledby="modalEvent" >
                                     <div class="modal-dialog p-2">
                                         <div class="modal-content">
                                             <div class="modal-header row pb-0 m-0">
                                                 <div class="col">
-                                                    <h5 class="modal-title " >รายการจอง #<span id="eventorder"></span></h5>
+                                                    <h5 class="modal-title" >รายการจอง #<span id="eventorder"></span></h5>
                                                     <p class="modal-title-desc prompt-regular" >โดย 65005001 สมมาตร กึ่งกลางพอดี<span id="eventbooker"></span></p>
                                                 </div>
                                                 <div class="col position-relative">
@@ -137,16 +139,20 @@
                                             <div class="modal-body mx-3 mt-0">
                                                 <div id="room-data" class="room-data mb-2 mx-1">
                                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                    <span id="eventroom" />
+                                                    <span id="eventroom">floor 4th,room1 (Metaverse)</span>
                                                 </div>
                                                 <div id="date-data" class="date-data my-2">
                                                     <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    <span id="eventdate">27/11/2024 09:00 - 12:00</span>
                                                 </div>
-                                                <div id="detail-data" class="detail-data"></div>
+                                                <div id="detail-data" class="detail-data">
+                                                    <h6 id="eventtitle" class="prompt-semibold">test01 ทดสอบรายการจอง 01</h6>
+                                                    <p class="text-muted eventdesc" id="eventdesc">test01 ทดสอบรายการจอง 01 purpose</p>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-outline-secondary text-uppercase" >Reject</button>
-                                                <button type="button" class="btn btn-approve text-uppercase ">Approve</button>
+                                                <button type="button" id="btn-reject" class="btn btn-outline-secondary text-uppercase" >Reject</button>
+                                                <button type="button" id="btn-approve" class="btn btn-approve text-uppercase" name="action_approve">Approve</button>
                                             </div>
                                         </div>
                                     </div>
