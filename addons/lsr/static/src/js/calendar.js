@@ -118,7 +118,7 @@ function defaultRoom(id) {
                 docs.forEach(function (evt) {
                     $('#h-room').text(evt.name);
                     $('#detailroom').text(evt.description);
-                    $('#imgroom').attr("src",host+evt.images);
+                    $('#imgroom').attr("src",evt.images);
                 });
             }
         }

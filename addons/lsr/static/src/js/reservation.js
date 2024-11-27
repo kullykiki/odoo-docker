@@ -56,7 +56,7 @@ function get_detailroom(date,s_time,e_time){
                         '    </div>'+
                         '</div>'+
                         '<div id="imgroom" class="col-lg-6 pt16 pb16 o_draggable o_colored_level">'+
-                        '    <img src="'+host+evt.images+'" class="img mx-auto img-crop" alt="" loading="lazy" data-mimetype="image/jpeg" data-original-id="250">'+
+                        '    <img src="'+evt.images+'" class="img mx-auto img-crop" alt="" loading="lazy" data-mimetype="image/jpeg" data-original-id="250">'+
                         '</div>'+
                         '</div>'
                     );
