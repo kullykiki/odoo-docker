@@ -19,7 +19,7 @@ $(document).ready(function(){
     },
     events: function( fetchInfo, successCallback, failureCallback ) { //include the parameters fullCalendar supplies to you!
         jQuery.ajax({
-            url: 'http://localhost:8069/api/pending/booking_get',
+            url: '/api/pending/booking_get',
             type: 'GET',
             dataType: 'json',
             data: '',
