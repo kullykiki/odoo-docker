@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="lsr.m_period_001" model="lsr.m_period">
+            <field name="start">8:00</field>
+            <field name="end">10:00</field>
+            <field name="type">n</field>
+            <field name="status">active</field>
+        </record>
+        <record id="lsr.m_period_002" model="lsr.m_period">
+            <field name="start">10:00</field>
+            <field name="end">12:00</field>
+            <field name="type">n</field>
+            <field name="status">active</field>
+        </record>
+        <record id="lsr.m_period_003" model="lsr.m_period">
+            <field name="start">12:00</field>
+            <field name="end">14:00</field>
+            <field name="type">n</field>
+            <field name="status">active</field>
+        </record>
+        <record id="lsr.m_period_004" model="lsr.m_period">
+            <field name="start">14:00</field>
+            <field name="end">16:00</field>
+            <field name="type">n</field>
+            <field name="status">active</field>
+        </record>
+        <record id="lsr.m_period_005" model="lsr.m_period">
+            <field name="start">16:00</field>
+            <field name="end">18:00</field>
+            <field name="type">n</field>
+            <field name="status">active</field>
+        </record>
+        <record id="lsr.m_period_006" model="lsr.m_period">
+            <field name="start">18:00</field>
+            <field name="end">20:00</field>
+            <field name="type">n</field>
+            <field name="status">active</field>
+        </record>
+    </data>
+</odoo>

@@ -30,7 +30,7 @@
                 <link href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.dataTables.css" rel="stylesheet"/>
                 <link href="https://cdn.datatables.net/responsive/3.0.3/css/responsive.dataTables.css" rel="stylesheet"/>
             </head>
-            <t t-name="website.lsr">
+
                 <t t-call="website.layout">
                     <t t-set="pageName" t-value="'lsr_dashboard'"/>
                     <div id="wrap" class="oe_structure oe_empty" position="replace">
@@ -96,7 +96,6 @@
                         </section>
                     </div>
                 </t>
-            </t>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
             <!-- fullcalendar JavaScript -->  
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -129,29 +128,27 @@
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
             </head>
-            <t t-name="website.lsr">
-                <t t-call="website.layout">
-                    <t t-set="pageName" t-value="'roomtype'"/>
-                    <div id="wrap" class="oe_structure oe_empty">
-                        <!-- header -->
-                        <section class="p-header">
-                            <div class="container-custom s_allow_columns">
-                                <h2 class="display-3-fs pt32 ps-3" style="text-align: left;">Room Type</h2>
-                                <div class="ps-4">
-                                    <hr class="hr-divide-2"/>
-                                </div>
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'roomtype'"/>
+                <div id="wrap" class="oe_structure oe_empty">
+                    <!-- header -->
+                    <section class="p-header">
+                        <div class="container-custom s_allow_columns">
+                            <h2 class="display-3-fs pt32 ps-3" style="text-align: left;">Room Type</h2>
+                            <div class="ps-4">
+                                <hr class="hr-divide-2"/>
                             </div>
-                        </section>
-                        <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
-                            <div class="container-custom">
-                                <div id="listroom" class="justify-content-md-center py-4">
-                                    
-                                </div>
+                        </div>
+                    </section>
+                    <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+                        <div class="container-custom">
+                            <div id="listroom" class="justify-content-md-center py-4">
+                                
                             </div>
-                        </section>
-                        
-                    </div>
-                </t>
+                        </div>
+                    </section>
+                    
+                </div>
             </t>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
             <script src="/lsr/static/src/js/roomtype.js"></script>
@@ -164,32 +161,30 @@
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
             </head>
-            <t t-name="website.lsr">
-                <t t-call="website.layout">
-                    <t t-set="pageName" t-value="'roomdetail'"/>
-                    <div id="wrap" class="oe_structure oe_empty">
-                        <!-- header -->
-                        <section class="p-header">
-                            <div class="container-custom s_allow_columns">
-                                <h2 class="display-3-fs pt32 ps-3" style="text-align: left;">
-                                    <a href="/lsr/roomtype" style="color: #000;"><i class="fs-2 bi-chevron-left pe-2"></i></a><span id="text-section"></span>
-                                </h2>
-                                <div class="ps-4">
-                                    <hr class="hr-divide-2"/>
-                                </div>
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'roomdetail'"/>
+                <div id="wrap" class="oe_structure oe_empty">
+                    <!-- header -->
+                    <section class="p-header">
+                        <div class="container-custom s_allow_columns">
+                            <h2 class="display-3-fs pt32 ps-3" style="text-align: left;">
+                                <a href="/lsr/roomtype" style="color: #000;"><i class="fs-2 bi-chevron-left pe-2"></i></a><span id="text-section"></span>
+                            </h2>
+                            <div class="ps-4">
+                                <hr class="hr-divide-2"/>
                             </div>
-                        </section>
-                        <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
-                            <div class="container-custom">
-                                <div id="listroom_detail" class="justify-content-md-center py-4">
-                                    
-                                </div>
+                        </div>
+                    </section>
+                    <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+                        <div class="container-custom">
+                            <div id="listroom_detail" class="justify-content-md-center py-4">
+                                
                             </div>
-                        </section>
-                        
-                    </div>
-                </t>
+                        </div>
+                    </section>
+                </div>
             </t>
+            
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
             <script src="/lsr/static/src/js/room_detail.js"></script>
         </template>
@@ -205,72 +200,70 @@
                 <!-- Timepicker -->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"/>
             </head>
-            <t t-name="website.lsr">
-                <t t-call="website.layout">
-                    <t t-set="pageName" t-value="'reservation'"/>
-                    <div id="wrap" class="oe_structure oe_empty">
-                        <!-- header -->
-                        <section class="p-header">
-                            <div class="container-custom s_allow_columns">
-                                <h2 class="display-3-fs pt32 ps-3" style="text-align: left;">Reservation</h2>
-                                <div class="ps-4">
-                                    <hr class="hr-divide-2"/>
-                                </div>
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'reservation'"/>
+                <div id="wrap" class="oe_structure oe_empty">
+                    <!-- header -->
+                    <section class="p-header">
+                        <div class="container-custom s_allow_columns">
+                            <h2 class="display-3-fs pt32 ps-3" style="text-align: left;">Reservation</h2>
+                            <div class="ps-4">
+                                <hr class="hr-divide-2"/>
                             </div>
-                        </section>
-                        <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
-                            <div class="container-custom">
-                                <div id="search_detail" class="row justify-content-md-center py-4">
-                                    <div class="mb-3 col-md-4 col-12">
-                                        <div class="row s_col_no_resize s_col_no_bgcolor">
-                                            <label class="col-form-label col-sm-auto" for="datepicker">
-                                                <span class="o_default_snippet_text">วันที่</span>
-                                            </label>
-                                            <div class="col-sm">
-                                                <input class="form-control border-gradient-input" type="text" name="date" id="datepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 col-md-3 col-6">
-                                        <div class="row s_col_no_resize s_col_no_bgcolor">
-                                            <label class="col-form-label col-sm-auto" for="datepicker">
-                                                <span class="o_default_snippet_text">เริ่ม</span>
-                                            </label>
-                                            <div class="col-sm">
-                                                <input class="form-control border-gradient-input timepicker" type="text" name="start_time" id="start_time"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 col-md-3 col-6">
-                                        <div class="row s_col_no_resize s_col_no_bgcolor">
-                                            <label class="col-form-label col-sm-auto" for="datepicker">
-                                                <span class="o_default_snippet_text">สิ้นสุด</span>
-                                            </label>
-                                            <div class="col-sm">
-                                                <input class="form-control border-gradient-input timepicker" type="text" name="end_time" id="end_time"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 col-md-2 col-12">
-                                        <div class="btn-group w-100" role="group" aria-label="Basic outlined example">
-                                            <button id="roomsearch" type="button" class="btn btn-sm btn-outline-danger" style="text-align: center;padding: 3px;">
-                                                <i class="fs-5 bi-search me-2"></i>Search
-                                            </button>
+                        </div>
+                    </section>
+                    <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+                        <div class="container-custom">
+                            <div id="search_detail" class="row justify-content-md-center py-4">
+                                <div class="mb-3 col-md-4 col-12">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto" for="datepicker">
+                                            <span class="o_default_snippet_text">วันที่</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input class="form-control border-gradient-input" type="text" name="date" id="datepicker"/>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                        <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
-                            <div class="container-custom">
-                                <div id="listroom_detail" class="justify-content-md-center py-4">
-                                    
+                                <div class="mb-3 col-md-3 col-6">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto" for="datepicker">
+                                            <span class="o_default_snippet_text">เริ่ม</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input class="form-control border-gradient-input timepicker" type="text" name="start_time" id="start_time"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-md-3 col-6">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto" for="datepicker">
+                                            <span class="o_default_snippet_text">สิ้นสุด</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input class="form-control border-gradient-input timepicker" type="text" name="end_time" id="end_time"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-md-2 col-12">
+                                    <div class="btn-group w-100" role="group" aria-label="Basic outlined example">
+                                        <button id="roomsearch" type="button" class="btn btn-sm btn-outline-danger" style="text-align: center;padding: 3px;">
+                                            <i class="fs-5 bi-search me-2"></i>Search
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </section>
-                        
-                    </div>
-                </t>
+                        </div>
+                    </section>
+                    <section class="s_text_image pb32 o_colored_level" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+                        <div class="container-custom">
+                            <div id="listroom_detail" class="justify-content-md-center py-4">
+                                
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
             </t>
             <!-- JQuery -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

@@ -1,30 +1,24 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="lsr.lsr">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+          <record id="booking01" model="lsr.booking">
+            <field name="start_date">2024-12-01 09:00:00</field>
+            <field name="end_date">2024-12-01 16:00:00</field>
+            <field name="title">อ่านหนังสือสอบ</field>
+            <field name="purpose">จองห้องเพื่ออ่านหนังสือสอบปลายภาคเรียนที่ 2 วิชา สถิติ</field>
+            <field name="room" ref="lsr.room01001" />
+            <field name="status">pending</field>
           </record>
 
-          <record id="object1" model="lsr.lsr">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="booking02" model="lsr.booking">
+            <field name="start_date">2024-12-02 09:00:00</field>
+            <field name="end_date">2024-12-02 16:00:00</field>
+            <field name="title">อ่านหนังสือสอบ</field>
+            <field name="purpose">จองห้องเพื่ออ่านหนังสือสอบปลายภาคเรียนที่ 2 วิชา สถิติ</field>
+            <field name="room" ref="lsr.room01001" />
+            <field name="status">done</field>
+            <field name="result">approved</field>
+            <field name="approved_time">2024-11-30 14:32:00</field>
           </record>
 
-          <record id="object2" model="lsr.lsr">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
-
-          <record id="object3" model="lsr.lsr">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
-
-          <record id="object4" model="lsr.lsr">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
     </data>
 </odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ชั้น 2 -->
+        <!-- ห้อง creative  -->
+        <record id="lsr.room02001" model="lsr.room">
+            <field name="name">CREATIVE AND IDEATION 1</field>
+            <field name="code">218</field>
+            <field name="description">ห้อง creative ชั้น 2 จุคนได้ 8 คน</field>
+            <field name="floor">2</field>
+            <field name="status">active</field>
+            <field name="type" ref="lsr.roomtype002" />
+            <field name="profile" type="base64" file="lsr/static/src/img/roomtype1.jpg" />
+        </record>
+        <record id="lsr.room02002" model="lsr.room">
+            <field name="name">CREATIVE AND IDEATION 2</field>
+            <field name="code">219</field>
+            <field name="description">ห้อง creative ชั้น 2 จุคนได้ 10 คน</field>
+            <field name="floor">2</field>
+            <field name="status">active</field>
+            <field name="type" ref="lsr.roomtype002" />
+            <field name="profile" type="base64" file="lsr/static/src/img/roomtype1.jpg" />
+        </record>
+        <!-- ห้อง tutor -->
+        <record id="lsr.room02003" model="lsr.room">
+            <field name="name">TUTOR 1</field>
+            <field name="code">220</field>
+            <field name="description">ห้อง tutor ชั้น 2 จุคนได้ 8 คน</field>
+            <field name="floor">2</field>
+            <field name="status">active</field>
+            <field name="type" ref="lsr.roomtype002" />
+            <field name="profile" type="base64" file="lsr/static/src/img/roomtype1.jpg" />
+        </record>
+        <record id="lsr.room02004" model="lsr.room">
+            <field name="name">TUTOR 2</field>
+            <field name="code">221</field>
+            <field name="description">ห้อง tutor ชั้น 2 จุคนได้ 10 คน</field>
+            <field name="floor">2</field>
+            <field name="status">active</field>
+            <field name="type" ref="lsr.roomtype002" />
+            <field name="profile" type="base64" file="lsr/static/src/img/roomtype1.jpg" />
+        </record>
+        <record id="lsr.room02005" model="lsr.room">
+            <field name="name">TUTOR 3</field>
+            <field name="code">222</field>
+            <field name="description">ห้อง tutor ชั้น 2 จุคนได้ 8 คน</field>
+            <field name="floor">2</field>
+            <field name="status">active</field>
+            <field name="type" ref="lsr.roomtype002" />
+            <field name="profile" type="base64" file="lsr/static/src/img/roomtype1.jpg" />
+        </record>
+       
+    </data>
+</odoo>

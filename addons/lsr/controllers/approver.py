@@ -10,9 +10,9 @@ import logging
 _logger = logging.getLogger(__name__)
 
 class ApproverLSR(http.Controller):
-    # @http.route('/approver', type='http', auth="user", website=True, sitemap=True)
-    # def index(self, **kw):
-    #     return http.request.render('lsr.approver_calendar')
+    @http.route('/approver', type='http', auth="user", website=True, sitemap=True)
+    def index(self, **kw):
+        return http.request.render('lsr.approver_calendar')
 
     @http.route('/api/approver_result/approve', type='json', auth="public", methods=['POST'])
     def get_approve_result(self, **kw):

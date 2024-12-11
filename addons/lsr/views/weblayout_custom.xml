@@ -178,15 +178,7 @@
             </xpath>
 	    </template>	
 
-        <template id="cus_login_layout" inherit_id="web.login_layout" name="Website Login Layout" priority="20">
-            <xpath expr="t" position="replace">
-                <t t-call="website.layout">
-                    <div class="p-header">
-                        <div class="oe_website_login_container" t-out="0"/>
-                    </div>
-                </t>
-            </xpath>
-        </template>
+       
 
         
 

@@ -24,21 +24,26 @@ Long description of module's purpose
         'security/ir.model.access.csv',
         'security/group.xml',
         'views/templates.xml',
+        'views/period.xml',
         'views/room.xml',
-        'views/approver.xml',
+        # 'views/approver.xml',
         'views/booking.xml',
         'views/views.xml',
+        'views/login.xml',
         'views/weblayout_custom.xml',
         'views/website_menu.xml',
         # 'views/website_templates.xml',
         'views/lsr_templates.xml',
         'data/sequence.xml',
+        'data/period.xml',
         'data/room_type.xml',
+        'data/room.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],
     'assets': {
         'web.assets_backend': [          
+            'lsr/static/src/scss/poppins.scss',
             'lsr/static/src/scss/prompt.scss',
             'lsr/static/wickedpicker/dist/wickedpicker.min.css',
             'lsr/static/wickedpicker/dist/wickedpicker.min.js',
@@ -46,8 +51,9 @@ Long description of module's purpose
             'lsr/static/src/js/time_widget.js',
         ],
         'web.assets_frontend': [          
-            'lsr/static/src/scss/theme.scss',
+            'lsr/static/src/scss/poppins.scss'
             'lsr/static/src/scss/prompt.scss'
+            'lsr/static/src/scss/theme.scss',
         ],
         'web._assets_primary_variables': [
             ('after', 'website/static/src/scss/primary_variables.scss','lsr/static/src/scss/colortemplete.scss'),

@@ -18,6 +18,7 @@ from odoo.exceptions import AccessError, ValidationError, UserError, MissingErro
 from odoo.http import request, Response
 from odoo.osv import expression
 from odoo.tools import consteq, email_split
+from odoo.addons.web.controllers.home import Home
 
 from datetime import timedelta
 from datetime import datetime
@@ -34,6 +35,7 @@ class Lsr(http.Controller):
 
     @http.route('/', type='http', auth="user", website=True, sitemap=True)
     def lsr_portal(self, **kw):
+        # return "Hello, world"
         return http.request.render('lsr.lsr_dashboard')
     
     @http.route('/lsr/dashboard', type='http', auth="user", website=True, sitemap=True)
@@ -70,7 +72,7 @@ class Lsr(http.Controller):
     
     # API
     
-    @http.route("/api/roomtype_get", auth='user', type='http',method=['GET'])
+    @http.route("/api/roomtype_get", auth='user', type='http',methods=['GET'])
     def api_get_roomtype(self,**values):
         products = request.env['lsr.m_room_type'].sudo().search([])
         product_list = []
@@ -312,5 +314,6 @@ class Lsr(http.Controller):
         
 
         # return http.request.render('lsr.reservation', { 'results': { 'code':200, 'message':'OK' ,'data' : strStatus} })
+
         
 

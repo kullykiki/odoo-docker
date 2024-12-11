@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="action_approve" model="ir.actions.server">
+        <!-- <record id="action_approve" model="ir.actions.server">
             <field name="name">Approve</field>
             <field name="model_id" ref="lsr.model_lsr_booking" />
             <field name="binding_model_id" ref="lsr.model_lsr_booking" />
@@ -20,7 +20,7 @@
             <field name="code">
                 action = records.action_reject()
             </field>
-        </record>
+        </record> -->
 
         <record model="ir.ui.view" id="lsr.booking_list">
             <field name="name">learning space reservation booking list</field>
@@ -29,9 +29,9 @@
                 <tree decoration-danger="status=='pending'" decoration-muted="status=='approved'">
                     <field name="title" string="วัตถุประสงค์การจอง" />
                     <field name="booker" widget="many2one_avatar_user" string="ผู้ขอจองห้อง" />
+                    <field name="booking_date" string="วันที่จอง" />
+                    <field name="period" string="ช่วงเวลาที่จอง" />
                     <field name="room" string="ห้อง" />
-                    <field name="start_date" string="เวลาเริ่มจอง" />
-                    <field name="end_date" string="เวลาสิ้นสุดการจอง" />
                     <field name="status" widget="badge" decoration-info="status == 'pending'"
                         decoration-success="status == 'approved'" string="ผลการอนุมัติ" />
                 </tree>
@@ -59,12 +59,12 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_approve" class="oe_highlight " type="object"
+                        <!-- <button name="action_approve" class="oe_highlight " type="object"
                             invisible="result and status == 'done'"
                             groups="lsr.group_booking_approve">Approve</button>
                         <button name="action_reject" class="btn btn-secondary" type="object"
                             invisible="result and status == 'done'"
-                            groups="lsr.group_booking_approve">Reject</button>
+                            groups="lsr.group_booking_approve">Reject</button> -->
                         <field name="status" widget="statusbar"  options="{'clickable': '1'}" />
                     </header>
                     <sheet>
@@ -81,16 +81,17 @@
                         <group>
                             <group>
                                 <field name="booker" widget="many2one_avatar_user" />
-                                <field name="start_date" />
+                                <field name="booking_date" />
+                                <field name="number_use" />
                                 <field name="check_in"  invisible="1" />
                             </group>
                             <group>
                                 <field name="room" />
-                                <field name="end_date" />
+                                <field name="period" />
                                 <field name="check_out" invisible="1" />
                             </group>
                         </group>
-                        <notebook invisible="result == False">
+                        <!-- <notebook invisible="result == False">
                             <page name="approve" string="Approve">
                                 <group>
                                     <group>
@@ -107,7 +108,7 @@
                                     </group>
                                 </group>
                             </page>
-                        </notebook>
+                        </notebook> -->
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" groups="base.group_user"
@@ -137,10 +138,10 @@
             <field name="name">lsr.booking.view.calendar</field>
             <field name="model">lsr.booking</field>
             <field name="arch" type="xml">
-                <calendar date_start="start_date" string="Learning" mode="month"
-                    date_stop="end_date" event_open_popup="false" color="booker">
+                <calendar  string="Learning" mode="month" date_start="booking_date" date_stop="booking_date"
+                     event_open_popup="false" color="booker">
                     <field name="booker" avatar_field="avatar_128" />
-                    <field name="start_date" />
+                    <field name="booking_date" />
                     <field name="room" avatar_field="profile" />
                 </calendar>
             </field>

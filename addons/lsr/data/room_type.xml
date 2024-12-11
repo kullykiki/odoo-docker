@@ -4,24 +4,18 @@
         <record id="lsr.roomtype001" model="lsr.m_room_type">
             <field name="name">Metaverse</field>
             <field name="description">Metaverse room for AR technology.</field>
-            <field name="start_time">09:00:00</field>
-            <field name="end_time">16:00:00</field>
             <field name="profile" type="base64" file="lsr/static/src/img/roomtype1.jpg" />
             <field name="status">active</field>
         </record>
         <record id="lsr.roomtype002" model="lsr.m_room_type">
-            <field name="name">Creative</field>
-            <field name="description">Creative room for any activity.</field>
-            <field name="start_time">09:00:00</field>
-            <field name="end_time">16:00:00</field>
+            <field name="name">CREATIVE AND IDEATION</field>
+            <field name="description">CREATIVE AND IDEATION room for any activity.</field>
             <field name="profile" type="base64" file="lsr/static/src/img/roomtype2.jpg" />
             <field name="status">active</field>
         </record>
         <record id="lsr.roomtype003" model="lsr.m_room_type">
             <field name="name">Common</field>
             <field name="description">Common room for any activity.</field>
-            <field name="start_time">09:00:00</field>
-            <field name="end_time">16:00:00</field>
             <field name="profile" type="base64" file="lsr/static/src/img/roomtype3.jpg" />
             <field name="status">active</field>
         </record>

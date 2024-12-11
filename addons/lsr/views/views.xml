@@ -66,6 +66,8 @@
     <menuitem name="Master" id="lsr.master_menu" parent="lsr.menu_root" />
     <menuitem name="Room Type" id="lsr.m_room_type_menu" parent="lsr.master_menu"
       action="lsr.lsr_m_room_type_action_window" />
+    <menuitem name="Period" id="lsr.m_period_menu" parent="lsr.master_menu"
+      action="lsr.m_period_action_window" />
     <!--
     <menuitem name="lsr" id="lsr.menu_root"/>
 -->

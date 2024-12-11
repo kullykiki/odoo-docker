@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html{
+    margin:0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    margin: 0;
+    font-family: "Poppins", serif !important;
+}
+.login_body{
+    /* background-color: plum; */
+    height: 100%;
+    display: flex;
+}
+.login_left{
+    height: 100%;
+    background: url("../img/kmitl.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login_right{
+    /* width: 60%; */
+    height: 100%;
+    /* background-color:cadetblue ; */
+}
+.login_right h2{
+    font-size: 26px;
+    font-weight: 600;
+}
+.login_right label{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Poppins", serif !important;
+    color: #7C838A;
+}
+input[type="text"],input[type="password"]{
+    background-color: rgba(176, 186, 195, 0.4) !important;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+}
+button[type="submit"]{
+    background-color: #A8DADC;
+    color: white;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: "Poppins", serif !important;
+    border: none;
+    border-radius: 10px;
+    margin: 50px 0;
+    padding: 8px 0;
+    margin-bottom: 10px;
+}
+.reset-pw{
+    font-size: 18px;
+    color: #7C838A;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.or-word{
+    text-align: center;
+    color: #F1FAEE;
+    margin: 20px auto;
+}

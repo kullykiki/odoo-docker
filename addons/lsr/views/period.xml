@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record model="ir.actions.act_window" id="lsr.m_period_action_window">
+            <field name="name">Period Master</field>
+            <field name="res_model">lsr.m_period</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    
+    </data>
+    
+
+</odoo>
